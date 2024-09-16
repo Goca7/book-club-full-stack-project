@@ -99,7 +99,7 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
   3. Admins must have the ability to delete books and their associated data.
  
-## Features
+## Core Features
 
 ### Home Page
 
