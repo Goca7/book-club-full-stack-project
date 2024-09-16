@@ -16,6 +16,10 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
 #### User Story: Secure Login
 - As a member, I want to view book details, so that I can learn more about specific titles before deciding to read them.
+
+- Acceptance Criteria:
+
+1. The data entered by the user into the login form (username and password) is correct and in the proper format before it is submitted to the server for processing.
   
 #### User Story: Leave Review  
 - As a member, I want to leave reviews for books I have read, so that I can share my opinions with other.
@@ -27,7 +31,7 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 - As a member, I want to receive notifications about my submissions, so that I know they were properly recorded.
 
 #### User Story: Review Moderation
-- As an admin, I want to view and moderate member feedback, so that I can ensure reviews are appropriate.
+- As an admin, I want to view and moderate members' reviews, so that I can ensure they are appropriate.
   
 - Acceptance Criteria:
 
