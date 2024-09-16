@@ -30,6 +30,10 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 #### User Story: Receive Notifications
 - As a member, I want to receive notifications about my submissions, so that I know they were properly recorded.
 
+- Acceptance Criteria:
+
+1. The system should send a notification when a user submits a book review.
+
 #### User Story: Review Moderation
 - As an admin, I want to view and moderate members' reviews, so that I can ensure they are appropriate.
   
