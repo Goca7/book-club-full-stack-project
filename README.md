@@ -20,6 +20,14 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 #### User Story: View Book Details
 - As a visitor, I want to sign up easily, so that I can join the Book Club.
 
+- Acceptance Criteria:
+
+1. Visitors should be able to click on a book title to view its details (title, author, genre, description).
+
+2. The book detail page must include user reviews and ratings.
+
+3. Non-members must have access to view book details without logging in.
+
 #### User Story: Secure Login
 - As a member, I want to view book details, so that I can learn more about specific titles before deciding to read them.
 
