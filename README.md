@@ -11,6 +11,12 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 #### User Story: User Sign-Up
 - As a visitor, I want to sign up easily, so that I can join the Book Club.
 
+- Acceptance Criteria:
+
+1. The sign-up form should have fields for username and password.
+
+2. Form validation must ensure that usernames are unique and in a valid format.
+
 #### User Story: View Book Details
 - As a visitor, I want to sign up easily, so that I can join the Book Club.
 
