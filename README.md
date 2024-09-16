@@ -28,6 +28,12 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
 #### User Story: Review Moderation
 - As an admin, I want to view and moderate member feedback, so that I can ensure reviews are appropriate.
+  
+- Acceptance Criteria:
+
+1. Admins should be able to access a dashboard to see all user reviews and comments.
+
+2. Admins must have the ability to delete inappropriate content.
 
 #### User Story: Manage Database
 - As an admin, I want to add, edit, and delete books from the database, so that I can manage the content of the site.
