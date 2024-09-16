@@ -38,6 +38,14 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 #### User Story: Leave Review  
 - As a member, I want to leave reviews for books I have read, so that I can share my opinions with other.
 
+- Acceptance Criteria:
+
+1. Users must be logged in to submit a review.
+
+2. Reviews should be displayed with the user's name, rating (1–5 stars), and review text.
+
+3. Users must have the option to edit or delete their reviews.
+
 #### User Story: Add Books to "Want to Read" List
 - As a member, I want to add books to my "Want to Read" list, so that I can save books for future reading.
 
