@@ -73,7 +73,7 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
   2. Upon clicking the button, a confirmation prompt appears, asking the user to confirm the deletion.
 
-  3. The system permanently deletes the user’s account and associated data (e.g., reviews, "Want to Read" list) upon confirmation.
+  3. The system permanently deletes the user’s account and associated data (e.g., reviews, "Want-to-read" list) upon confirmation.
 
   4. The user receives a confirmation message notifying them that their account has been deleted.
 
