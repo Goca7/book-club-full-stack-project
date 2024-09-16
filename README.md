@@ -46,6 +46,14 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 #### User Story: Manage Database
 - As an admin, I want to add, edit, and delete books from the database, so that I can manage the content of the site.
 
+- Acceptance Criteria:
+
+1. Admins should be able to create new book entries through a form.
+
+2. Admins must be able to edit book information like title, author, genre, and description.
+
+3. Admins must have the ability to delete books and their associated data.
+
 
 
 
