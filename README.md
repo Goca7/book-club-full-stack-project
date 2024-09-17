@@ -6,7 +6,7 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
 ## Table of Contents (tba)
 
-### User Stories
+## User Stories
 
 #### User Story: User Sign-Up
 - As a visitor, I want to sign up easily, so that I can join the Book Club.
@@ -99,7 +99,7 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
   3. Admins must have the ability to delete books and their associated data.
  
-## Core Features
+## Existing Features
 
 ### Home Page
 
@@ -147,7 +147,24 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
   - Users will receive a confirmation message confirming the successful account deletion.
 
+## Future Features (tba)
+
+## User Flow Diagrams
+
+<img width="238" alt="book_club_visitor_flowchart_reduced" src="https://github.com/user-attachments/assets/746d33c6-d1bf-4012-ab56-639b6437a6f6">
+
+<img width="408" alt="book_club_member_flowchart_reduced" src="https://github.com/user-attachments/assets/6b1fa831-8b5e-42a5-a173-417e2b8b7b31">
+
+<img width="581" alt="book_club_admin_flowchart_reduced" src="https://github.com/user-attachments/assets/8df23cf0-f69b-4792-b156-69d8bb25c18b">
+
+## Technologies Used
+
+  - UI Design Software for User Flow Diagrams
+    https://www.visily.ai/
+
+    
   
+
 
 
 
