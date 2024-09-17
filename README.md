@@ -187,10 +187,48 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
 <img width="581" alt="book_club_admin_flowchart_reduced" src="https://github.com/user-attachments/assets/8df23cf0-f69b-4792-b156-69d8bb25c18b">
 
+## Data Models
+
+### Book Model:
+
+- Each book in our club will have attributes such as title, author, description, and published date.
+
+### Review Model:
+
+- The Review model will store reviews users leave for each book. It is linked both to the Book and the User models.
+
+### User Model:
+
+- The User model is provided by Django.
+
+### Relationships:
+
+#### User <-> Review:
+
+- One-to-many relationship: One user can write multiple reviews, but each review belongs to only one user.
+
+- Foreign Key: user_id in the Review table references the id in the User table.
+
+#### Book <-> Review:
+
+- One-to-many relationship: One book can have multiple reviews, but each review is linked to only one book.
+
+- Foreign Key: book_id in the Review table references the id in the Book table.
+
+![book_club_tables_in_database1](https://github.com/user-attachments/assets/763a3479-3d8c-4719-84b1-6a078c0540cb)
+
+![book_club_tables_in_database2](https://github.com/user-attachments/assets/26596c0f-6ffa-4562-b8b2-32a7f92fae8f)
+
+## ER Diagram
+
+![book_club_ER_diagram](https://github.com/user-attachments/assets/4f463bbd-305a-4d76-9826-d8d0fd81e896)
+
 ## Technologies Used
 
-  - UI Design Software for User Flow Diagrams
-    https://www.visily.ai/
+  - Visily
+  - Lucidchart
+  - MS Word 
+  - PDF to PNG 
 
     
   
