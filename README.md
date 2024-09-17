@@ -8,7 +8,7 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
 ## User Stories
 
-#### User Story: User Sign-Up
+#### User Story: User Sign-Up (Must Have)
 - As a visitor, I want to sign up easily, so that I can join the Book Club.
 
 - Acceptance Criteria:
@@ -17,7 +17,7 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
   2. Form validation must ensure that usernames are unique and in a valid format.
 
-#### User Story: View Book Details
+#### User Story: View Book Details (Must Have)
 - As a visitor, I want to sign up easily, so that I can join the Book Club.
 
 - Acceptance Criteria:
@@ -28,14 +28,14 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
   3. Non-members must have access to view book details without logging in.
 
-#### User Story: Secure Login
+#### User Story: Secure Login (Must Have)
 - As a member, I want to view book details, so that I can learn more about specific titles before deciding to read them.
 
 - Acceptance Criteria:
 
   1. The data entered by the user into the login form (username and password) is correct and in the proper format before it is submitted to the server for processing.
   
-#### User Story: Leave Review  
+#### User Story: Leave Review (Must Have)  
 - As a member, I want to leave reviews for books I have read, so that I can share my opinions with other.
 
 - Acceptance Criteria:
@@ -46,7 +46,7 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
     3. Users must have the option to edit or delete their reviews.
 
-#### User Story: Add Books to "Want-to-read" List
+#### User Story: Add Books to "Want-to-read" List (Must Have)
 - As a member, I want to add books to my "Want-to-read" list, so that I can save books for future reading.
 
 - Acceptance Criteria:
@@ -57,14 +57,14 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
   3. Users should have the ability to remove books from their "Want-to-read" list.
 
-#### User Story: Receive Notifications
+#### User Story: Receive Notifications (Must Have)
 - As a member, I want to receive notifications about my submissions, so that I know they were properly recorded.
 
 - Acceptance Criteria:
 
   1. The system should send a notification when a user submits a book review.
  
-#### User Story: Account Deletion
+#### User Story: Account Deletion (Must Have)
 - As a member, I want to delete my account easily, so that I can remove my personal data and stop using the platform.
 
 - Acceptance Criteria:
@@ -79,7 +79,7 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
   5. After deletion, the user can no longer log in with the deleted account credentials.
 
-#### User Story: Review Moderation
+#### User Story: Review Moderation (Must Have)
 - As an admin, I want to view and moderate members' reviews, so that I can ensure they are appropriate.
   
 - Acceptance Criteria:
@@ -88,7 +88,7 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
   2. Admins must have the ability to delete inappropriate content.
 
-#### User Story: Manage Database
+#### User Story: Manage Database (Must Have)
 - As an admin, I want to add, edit, and delete books from the database, so that I can manage the content of the site.
 
 - Acceptance Criteria:
@@ -99,7 +99,23 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
   3. Admins must have the ability to delete books and their associated data.
  
-## Existing Features
+#### User Story: Related Books
+
+ - As a visitor, I want to see related books based on genre or author on the book detail page, so that I can discover similar titles that may interest me.
+
+ - Acceptance Criteria:
+
+   1. When a user views the book detail page, related books (based on genre or author) should be displayed at the bottom of the page.
+
+   2. The system should display at least three related books in a horizontal scroll or grid format.
+
+   3. Each related book should include the title, author, and a link to its detail page.
+   
+   4. If there are no related books available, this section should be hidden or display a message like “No related books found.”
+
+   5. The related books must be relevant, showing books from the same genre or by the same author as the currently viewed book. 
+ 
+## Existing Features (MVP)
 
 ### Home Page
 
@@ -131,8 +147,6 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
  
   - Reviews Section: Shows reviews from other members, including the reviewer's name, rating, and comment. Logged-in users can leave their own review.
  
-  - Related Books: At the bottom of the page, suggest similar or related books based on the genre or author.
- 
   - Navigation Links: Quick links back to the book listings page or Home page
 
 ### User Profile Page
@@ -147,7 +161,23 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
   - Users will receive a confirmation message confirming the successful account deletion.
 
-## Future Features (tba)
+## Future Features 
+
+### Home Page
+
+  - tba
+
+### Book Listing Page
+
+  - tba
+
+### Book Detail Page
+
+  - Related Books: At the bottom of the page, suggest similar or related books based on the genre or author.
+
+### User Profile Page
+
+  - tba
 
 ## User Flow Diagrams
 
