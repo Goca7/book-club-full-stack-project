@@ -99,7 +99,7 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
   3. Admins must have the ability to delete books and their associated data.
  
-#### User Story: Related Books
+#### User Story: Related Books (Could Have)
 
  - As a visitor, I want to see related books based on genre or author on the book detail page, so that I can discover similar titles that may interest me.
 
