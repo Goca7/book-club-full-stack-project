@@ -191,7 +191,7 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
 ### Home Page
 
-![Home_page_wireframes](https://github.com/user-attachments/assets/ae9f563e-1f50-4e40-809c-05af12b36173)
+![Home_page_wireframes](https://github.com/user-attachments/assets/7afc1334-5c98-4934-b9ec-7b5d1ef79d29)
 
 ## Data Models
 
@@ -233,8 +233,9 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
   - Visily
   - Lucidchart
+  - Figma
   - MS Word 
-  - PDF to PNG 
+ 
 
     
   
