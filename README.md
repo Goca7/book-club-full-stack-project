@@ -187,6 +187,12 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
 <img width="581" alt="book_club_admin_flowchart_reduced" src="https://github.com/user-attachments/assets/8df23cf0-f69b-4792-b156-69d8bb25c18b">
 
+## Wireframes
+
+### Home Page
+
+![Home_page_wireframes](https://github.com/user-attachments/assets/ae9f563e-1f50-4e40-809c-05af12b36173)
+
 ## Data Models
 
 ### Book Model:
