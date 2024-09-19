@@ -232,14 +232,14 @@ tba
 - One-to-many relationship: One book can have multiple reviews, but each review is linked to only one book.
 
 - Foreign Key: book_id in the Review table references the id in the Book table.
+  
+![book_club_tables_in_database1](https://github.com/user-attachments/assets/5a7e87a1-a211-40be-adb0-a4ec6bc57e07)
 
-![book_club_tables_in_database1](https://github.com/user-attachments/assets/763a3479-3d8c-4719-84b1-6a078c0540cb)
-
-![book_club_tables_in_database2](https://github.com/user-attachments/assets/26596c0f-6ffa-4562-b8b2-32a7f92fae8f)
+![book_club_tables_in_database2](https://github.com/user-attachments/assets/376a960a-3afd-49fd-87c4-b254507e65d3)
 
 ## ER Diagram
 
-![book_club_ER_diagram](https://github.com/user-attachments/assets/4f463bbd-305a-4d76-9826-d8d0fd81e896)
+![book_club_ER_diagram](https://github.com/user-attachments/assets/ede5057d-209f-4436-b888-4c46f9eabb73)
 
 ## Technologies Used
 
