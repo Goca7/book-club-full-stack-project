@@ -193,6 +193,18 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
 ![Home_page_wireframes](https://github.com/user-attachments/assets/7afc1334-5c98-4934-b9ec-7b5d1ef79d29)
 
+### Book Listing Page
+
+![Book_listing_page_wireframes](https://github.com/user-attachments/assets/8b9fd3ff-4bf6-4b5c-b994-cf97ba9282d1)
+
+### Book Detail Page
+
+tba
+
+### User Profile Page
+
+tba
+
 ## Data Models
 
 ### Book Model:
