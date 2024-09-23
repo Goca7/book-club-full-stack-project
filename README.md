@@ -191,15 +191,16 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
 ### Home Page
 
-![Home_page_wireframes](https://github.com/user-attachments/assets/c8e137cb-ad8c-4b61-813b-a27904722470)
+![Home_page_wireframes](https://github.com/user-attachments/assets/422deaee-e25b-4d60-90f8-3c2c3475e008)
 
 ### Book Listing Page
 
-![Book_listing_page_wireframes](https://github.com/user-attachments/assets/8b9fd3ff-4bf6-4b5c-b994-cf97ba9282d1)
+![Book_listing_page_wireframes](https://github.com/user-attachments/assets/7477df84-8691-49ed-bf79-54b3164772e0)
+
 
 ### Book Detail Page
 
-tba
+![Book_detail_page_wireframes](https://github.com/user-attachments/assets/a0b7c7e8-278d-4f70-81cc-feefb7e19919)
 
 ### User Profile Page
 
