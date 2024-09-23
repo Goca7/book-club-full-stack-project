@@ -141,7 +141,9 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
 ![Book_detail_page_wireframes](https://github.com/user-attachments/assets/a0b7c7e8-278d-4f70-81cc-feefb7e19919)
 
-#### User Profile Page (tba)
+#### User Profile Page 
+
+![User_profile_page_wireframes](https://github.com/user-attachments/assets/940159d9-e0f6-406c-9fff-280a57c9eccc)
  
 ### Existing Features (MVP)
 
@@ -258,7 +260,7 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
 ## Testing (tba)
 
-##Credits (tba)
+## Credits (tba)
     
   
 
