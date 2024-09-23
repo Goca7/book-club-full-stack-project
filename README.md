@@ -4,9 +4,11 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
 [Live project] (https://
 
-## Table of Contents (tba)
+## Contents (tba)
 
-## User Stories
+## User Experience (UX)
+
+### User Stories
 
 #### User Story: User Sign-Up (Must Have)
 - As a visitor, I want to sign up easily, so that I can join the Book Club.
@@ -113,11 +115,37 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
    
    4. If there are no related books available, this section should be hidden or display a message like “No related books found.”
 
-   5. The related books must be relevant, showing books from the same genre or by the same author as the currently viewed book. 
- 
-## Existing Features (MVP)
+   5. The related books must be relevant, showing books from the same genre or by the same author as the currently viewed book.
+  
+### Accessibility (tba)
+  
+## Design 
 
-### Home Page
+### Colour Scheme (tba)
+
+### Typography (tba)
+
+### Imagery (tba)
+
+### Wireframes
+
+#### Home Page
+
+![Home_page_wireframes](https://github.com/user-attachments/assets/422deaee-e25b-4d60-90f8-3c2c3475e008)
+
+#### Book Listing Page
+
+![Book_listing_page_wireframes](https://github.com/user-attachments/assets/7477df84-8691-49ed-bf79-54b3164772e0)
+
+#### Book Detail Page
+
+![Book_detail_page_wireframes](https://github.com/user-attachments/assets/a0b7c7e8-278d-4f70-81cc-feefb7e19919)
+
+#### User Profile Page (tba)
+ 
+### Existing Features (MVP)
+
+#### Home Page
 
   - Hero Section: A welcoming banner with a catchy tagline introducing the book club to potential users. Includes a "Join Now" call-to-action button, leading to the signup modal.
  
@@ -131,7 +159,7 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
  
   - Footer: Contains links to privacy policy, contact information, and social media profiles.
  
-### Book Listing Page
+#### Book Listing Page
 
   - Book Grid: Display books in a clean, responsive grid format, with each book showing its title, author, rating, and a brief summary. Each book is clickable, leading to the detailed book page.
  
@@ -139,7 +167,7 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
  
   - "Want-to-read" Button: Logged-in members can directly add a book to their "Want-to-read" list from the listing page.
  
-### Book Detail Page
+#### Book Detail Page
 
   - Book Information: Displays comprehensive details about the selected book, including the title, author, genre, publication date, synopsis, and rating.
  
@@ -149,7 +177,7 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
  
   - Navigation Links: Quick links back to the book listings page or Home page
 
-### User Profile Page
+#### User Profile Page
 
   - "Want-to-read" list: This is the primary place where users can view and manage their saved books. When a user logs in and navigates to their profile page, there will be a section called "Want-to-read". This 
     section will display all the books that the user has previously added.
@@ -161,50 +189,25 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
   - Users will receive a confirmation message confirming the successful account deletion.
 
-## Future Features 
+### Future Features 
 
-### Home Page
+#### Home Page (tba)
 
-  - tba
-
-### Book Listing Page
-
-  - tba
+#### Book Listing Page (tba)
 
 ### Book Detail Page
 
   - Related Books: At the bottom of the page, suggest similar or related books based on the genre or author.
 
-### User Profile Page
+#### User Profile Page (tba)
 
-  - tba
-
-## User Flow Diagrams
+### User Flow Diagrams
 
 <img width="238" alt="book_club_visitor_flowchart_reduced" src="https://github.com/user-attachments/assets/746d33c6-d1bf-4012-ab56-639b6437a6f6">
 
 <img width="408" alt="book_club_member_flowchart_reduced" src="https://github.com/user-attachments/assets/6b1fa831-8b5e-42a5-a173-417e2b8b7b31">
 
 <img width="581" alt="book_club_admin_flowchart_reduced" src="https://github.com/user-attachments/assets/8df23cf0-f69b-4792-b156-69d8bb25c18b">
-
-## Wireframes
-
-### Home Page
-
-![Home_page_wireframes](https://github.com/user-attachments/assets/422deaee-e25b-4d60-90f8-3c2c3475e008)
-
-### Book Listing Page
-
-![Book_listing_page_wireframes](https://github.com/user-attachments/assets/7477df84-8691-49ed-bf79-54b3164772e0)
-
-
-### Book Detail Page
-
-![Book_detail_page_wireframes](https://github.com/user-attachments/assets/a0b7c7e8-278d-4f70-81cc-feefb7e19919)
-
-### User Profile Page
-
-tba
 
 ## Data Models
 
@@ -238,18 +241,24 @@ tba
 
 ![book_club_tables_in_database2](https://github.com/user-attachments/assets/376a960a-3afd-49fd-87c4-b254507e65d3)
 
-## ER Diagram
+### ER Diagram
 
 ![book_club_ER_diagram](https://github.com/user-attachments/assets/ede5057d-209f-4436-b888-4c46f9eabb73)
 
-## Technologies Used
+## Technologies Used (tba)
 
   - Visily
   - Lucidchart
   - Figma
   - MS Word 
- 
 
+## Agile Methodology (tba)
+
+## Deployment and Local Development (tba)
+
+## Testing (tba)
+
+##Credits (tba)
     
   
 
