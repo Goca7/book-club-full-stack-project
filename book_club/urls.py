@@ -18,10 +18,12 @@ from django.contrib import admin
 from django.urls import path
 from books.views import books_view
 from reviews.views import reviews_view
+from wish_list.views import wish_list_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('books/', books_view, name='books'),
     path('reviews/', reviews_view, name='reviews'),
+    path('wish-list/', wish_list_view, name='wish-list'),
     # Add more paths as needed...
 ]
