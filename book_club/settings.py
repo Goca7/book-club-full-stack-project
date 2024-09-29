@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-beacsxq(-37h@$8u4)h7dtp0p4s_e*_s)8wm+mt$g*f@+6ez%)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '8000-goca7-bookclubfullstac-rg7r7tapfxq.ws.codeinstitute-ide.net',
@@ -135,3 +135,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-goca7-bookclubfullstac-rg7r7tapfxq.ws.codeinstitute-ide.net']
