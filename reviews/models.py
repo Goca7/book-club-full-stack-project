@@ -12,4 +12,4 @@ class Review(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'Review by {self.user.username} - {self.book.title}'
+        return f"Review by {self.user.username} - {self.book.title}"
