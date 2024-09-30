@@ -1,5 +1,26 @@
-<h2>Create New Book</h2>
-<form method="POST">
-  {% csrf_token %} {{ form.as_p }}
-  <button type="submit">Save</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create New Book</title>
+  </head>
+  <body>
+    <h2>Create New Book</h2>
+
+    <!-- Book creation form -->
+    <form method="POST">
+      <!-- CSRF token for security (required in Django forms) -->
+      {% csrf_token %}
+
+      <!-- Form fields rendered as paragraphs  -->
+      {{ form.as_p }}
+
+      <!-- Submit button to save the new book -->
+      <button type="submit">Save</button>
+    </form>
+
+    <!-- Link to go back to the book list -->
+    <p><a href="{% url 'books_view' %}">Back to Book List</a></p>
+  </body>
+</html>
