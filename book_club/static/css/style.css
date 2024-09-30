@@ -100,3 +100,19 @@ footer {
   background-color: #333;
   color: white;
 }
+
+/* Base styles - Desktop (Large screens) */
+.book-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.book-item {
+  width: 25%; /* 4 columns */
+  margin-bottom: 40px;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+}
