@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Book
 from .forms import BookForm
 
@@ -7,15 +7,15 @@ from .forms import BookForm
 def books_view(request):
     books = Book.objects.all()  # Fetch all books from the database
     # Render the template with the books
-    return render(request, 'books/book_list.html', {'books: books})'})
+    return render(request, 'books/book_list.html', {'books': books})
 
 
 # View to display a single book using its slug
 def book_details_view(request, slug):
     # Fetch the book from the database using its slug
-    book = Book.objects.get(slug=slug)
+    book = get_object_or_404(Book, slug=slug)
     # Render the template with the book details
-    return render(request, 'books/book_detail.html', {book: book})
+    return render(request, 'books/book_detail.html', {'book': book})
 
 
 # View to create a new book
@@ -37,7 +37,7 @@ def create_book(request):
 
 # View to update an existing book
 def update_book(request, slug):
-    book = Book.objects.get(slug=slug)
+    book = get_object_or_404(Book, slug=slug)
     if request.method == 'POST':
         form = BookForm(request.POST, instance=book)
         if form.is_valid():
@@ -45,15 +45,18 @@ def update_book(request, slug):
             # Redirect to updated book details
             return redirect('book_details_view', slug=book.slug)
     else:
+        # Populate the form with the existing book data
         form = BookForm(instance=book)
+    # Render the template with the form for updating the book details
     return render(request, 'books/update_book.html', {'form': form})
 
+
 # View to delete a book
-
-
 def delete_book(request, slug):
-    book = Book.objects.get(slug=slug)
+    # Fetch the book from the database using its slug
+    book = get_object_or_404(Book, slug=slug)
     if request.method == 'POST':
         book.delete()  # Delete the book from the database
         return redirect('books_view')  # Redirect to the book list page
+    # Render the template with the book details for confirmation before deletion
     return render(request, 'books/delete_book.html', {'book': book})
