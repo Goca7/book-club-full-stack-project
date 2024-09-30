@@ -9,9 +9,8 @@ def books_view(request):
     # Render the template with the books
     return render(request, 'books/book_list.html', context)
 
+
 # View to display a single book using its slug
-
-
 def book_details_view(request, slug):
     # Fetch the book from the database using its slug
     book = get_object_or_404(Book, slug=slug)
