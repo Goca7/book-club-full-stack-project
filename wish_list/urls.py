@@ -4,5 +4,7 @@ from . import views  # Import views from the wish_list app
 urlpatterns = [
     # URL for the wish list page
     path('', views.wish_list_view, name='wish_list_view'),
+    # URL for the signup page
+    path('signup/', views.signup, name='signup'),
 
 ]
