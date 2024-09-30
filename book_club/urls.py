@@ -15,15 +15,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from books.views import books_view
-from reviews.views import reviews_view
-from wish_list.views import wish_list_view
+from django.urls import path, include
+
 
 urlpatterns = [
+    # Django admin site URL
     path('admin/', admin.site.urls),
-    path('books/', books_view, name='books'),
-    path('reviews/', reviews_view, name='reviews'),
-    path('wish-list/', wish_list_view, name='wish-list'),
+    # Delegate URLs starting with 'books/' to the books app
+    path('books/', include('books.urls')),
+    # Delegate URLs starting with 'reviews/' to the reviews app
+    path('reviews/', include('reviews.urls')),
+    # Delegate URLs starting with 'wish-list/' to the wish_list app
+    path('wish-list/', include('wish_list.urls')),
     # Add more paths as needed...
 ]
