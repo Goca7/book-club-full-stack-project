@@ -1,13 +1,27 @@
-<h1>Books List</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Books List</title>
+  </head>
+  <body>
+    <h1>Books List</h1>
 
-<ul>
-  {% for book in books %}
-  <li>
-    <a href="{% url 'book_detail' book.slug %}">{{ book.title }}</a> by
-    {{book.author }}
-  </li>
+    <!-- Book list -->
+    <ul>
+      <!-- Loop through the books in the context -->
+      {% for book in books %}
+      <li>
+        <!-- Link to the book detail page using its slug -->
+        <a href="{% url 'book_detail' book.slug %}">{{ book.title }}</a> by {{
+        book.author }}
+      </li>
 
-  {% empty %}
-  <li>No books available.</li>
-  {% endfor %}
-</ul>
+      <!-- If no books are available, show this message -->
+      {% empty %}
+      <li>No books available.</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
