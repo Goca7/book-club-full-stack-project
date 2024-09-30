@@ -34,7 +34,7 @@
         <!-- Render the review form fields as paragraphs -->
         {{ review_form.as_p }}
         <!-- Submit button for adding a review -->
-        <button type="submit">Add Review</button>
+        <button type="submit" name="add_review">Add Review</button>
       </form>
       <!-- If the user is not logged in, display a login prompt -->
       {% else %}
@@ -48,6 +48,24 @@
         <li>
           <strong>{{ review.user.username }}</strong>: {{ review.review_text }}
           <em>({{ review.created_at }})</em>
+          {% if user == review.user %}
+          <!-- Buttons for editing and deleting the review -->
+          <form
+            method="POST"
+            action="{% url 'delete_review' review.id %}"
+            style="display: inline"
+          >
+            {% csrf_token %}
+            <button type="submit" name="edit_review">Edit</button>
+          </form>
+          <form
+            method="POST"
+            action="{% url 'delete_review' review.id %}"
+            style="display: inline"
+          >
+            {% csrf_token %}
+            <button type="submit">Delete</button>
+          </form>
         </li>
         {% empty %}
         <li>No reviews yet.</li>
@@ -56,7 +74,7 @@
 
       <!-- Link to go back to the Book List -->
       <p>
-        <a href="{% url 'books_view' %}" class="back-link">Back to Book List</a>
+        <a href="{% url 'books_view' %}">Back to Book List</a>
       </p>
     </div>
   </body>
