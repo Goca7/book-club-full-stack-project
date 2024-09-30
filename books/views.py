@@ -24,7 +24,7 @@ def book_details_view(request, slug):
     reviews = Review.objects.filter(book=book)
 
     # Handle review form submission a review form
-    if 'add_review' in request.'POST':
+    if 'add_review' in request.POST:
         reviews_form = ReviewForm(request.POST)
         if reviews_form.is_valid():
             # Save the review to the database
