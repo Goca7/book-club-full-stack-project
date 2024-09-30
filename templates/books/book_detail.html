@@ -1,5 +1,35 @@
-<h1>{{ book.title }}</h1>
-<p><strong>Author:</strong> {{ book.author }}</p>
-<p><strong>Genre:</strong> {{ book.genre }}</p>
-<p><strong>Description:</strong> {{ book.description }}</p>
-<p><a href="{% url 'books_view' %}">Back to Book List</a></p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ book.title }} - Book Details</title>
+
+    <!-- Load the external CSS file -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'books/styles.css' %}"
+    />
+  </head>
+  <body>
+    <div class="book-container">
+      <!-- Book Title -->
+      <h1>{{ book.title }}</h1>
+
+      <!-- Book Author -->
+      <p><strong>Author:</strong> {{ book.author }}</p>
+
+      <!-- Book Genre -->
+      <p><strong>Genre:</strong> {{ book.genre }}</p>
+
+      <!-- Book Description -->
+      <p><strong>Description:</strong> {{ book.description }}</p>
+
+      <!-- Link to go back to the Book List -->
+      <p>
+        <a href="{% url 'books_view' %}" class="back-link">Back to Book List</a>
+      </p>
+    </div>
+  </body>
+</html>
