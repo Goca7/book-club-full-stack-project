@@ -19,6 +19,7 @@ from django.urls import path, include
 
 
 urlpatterns = [
+    path('accounts/', include('django.contrib.auth.urls')),
     # Django admin site URL
     path('admin/', admin.site.urls),
     # Delegate URLs starting with 'books/' to the books app
@@ -27,6 +28,5 @@ urlpatterns = [
     path('reviews/', include('reviews.urls')),
     # Delegate URLs starting with 'wish-list/' to the wish_list app
     path('wish-list/', include('wish_list.urls')),
-    path('accounts/', include('django.contrib.auth.urls')),
     # Add more paths as needed...
 ]
