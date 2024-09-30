@@ -85,3 +85,10 @@ nav ul li a {
   width: 100%;
   border-radius: 10px;
 }
+
+/* About Section */
+.about-us {
+  padding: 40px;
+  background-color: #e2e2e2;
+  text-align: center;
+}
