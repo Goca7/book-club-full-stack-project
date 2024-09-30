@@ -26,13 +26,20 @@
       <!-- Book Description -->
       <p><strong>Description:</strong> {{ book.description }}</p>
 
+      <!-- If the user is logged in, show the review form -->
       {% if user.is_authenticated %}
       <form method="POST">
-        {% csrf_token %} {{ review_form.as_p }}
+        <!-- Include CSRF token for security -->
+        {% csrf_token %}
+        <!-- Render the review form fields as paragraphs -->
+        {{ review_form.as_p }}
+        <!-- Submit button for adding a review -->
         <button type="submit">Add Review</button>
       </form>
+      <!-- If the user is not logged in, display a login prompt -->
       {% else %}
       <p><a href="{% url 'login' %}">Log in</a> to leave a review.</p>
+      <!-- Link to the login page -->
       {% endif %}
 
       <h2>Reviews</h2>
