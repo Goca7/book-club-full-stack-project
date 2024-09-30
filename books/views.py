@@ -34,8 +34,13 @@ def book_details_view(request, slug):
         # Create a blank review form
         reviews_form = ReviewForm()
 
-    # Render the template with the book details
-    return render(request, 'books/book_detail.html', {'book': book})
+    # Render the template with the book details and reviews
+    context = {
+        'book': book,
+        'reviews': reviews,
+        'reviews_form': reviews_form,  # Form for adding new reviews to the book
+    }
+    return render(request, 'books/book_detail.html', context)
 
 
 # View to create a new book
