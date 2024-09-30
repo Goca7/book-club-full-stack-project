@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Book
 from .forms import BookForm
+from reviews.models import Review
+from reviews.forms import ReviewForm
 
 
 # View to display a list of all books
@@ -10,10 +12,28 @@ def books_view(request):
     return render(request, 'books/book_list.html', {'books': books})
 
 
-# View to display a single book using its slug
+# View to display a single book using its slug and handle reviews
 def book_details_view(request, slug):
     # Fetch the book from the database using its slug
     book = get_object_or_404(Book, slug=slug)
+
+    # Fetch all reviews for the book from the database
+    reviews = Review.objects.filter(book=book)
+
+    # Handle review form submission
+    if request.method == 'POST':
+        reviews_form = ReviewForm(request.POST)
+        if reviews_form.is_valid():
+            # Save the review to the database
+            new_review = reviews_form.save(commit=False)
+            new_review.book = book  # Associate the review with the book
+            new_review.user = request.user  # Associate the review with the logged-in user
+            new_review.save()
+            return redirect('book_details_view', slug=book.slug)
+    else:
+        # Create a blank review form
+        reviews_form = ReviewForm()
+
     # Render the template with the book details
     return render(request, 'books/book_detail.html', {'book': book})
 
