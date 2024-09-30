@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import WishList
 from books.models import Book
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
 # Create your views here.
@@ -23,9 +24,8 @@ def add_to_wish_list(request, book_id):
         # Redirect to the login page if the user is not authenticated
         return redirect('login')
 
+
 # Display the "Want-to-read" list of books for the current user
-
-
 def wish_list_view(request):
     if request.user.is_authenticated:
         # Fetch all books from the WishList model associated with the current user
@@ -53,3 +53,17 @@ def remove_from_wish_list(request, wish_list_id):
     else:
         # Redirect to the login page if the user is not authenticated
         return redirect('login')
+
+
+# Signup view to allow new users to register
+def signup(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()  # Save the new user
+            # Redirect to the login page after successful signup
+            return redirect('login')
+    else:
+        form = UserCreationForm()
+    # Render the signup page with the form
+    return render(request, 'registration/signup.html', {'form': form})
