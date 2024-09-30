@@ -64,3 +64,24 @@ nav ul li a {
   text-decoration: none;
   font-size: 18px;
 }
+
+/* Featured Books Section */
+.featured-books {
+  padding: 40px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.book-grid {
+  display: flex;
+  justify-content: space-around;
+}
+
+.book-item {
+  width: 30%;
+}
+
+.book-item img {
+  width: 100%;
+  border-radius: 10px;
+}
