@@ -116,3 +116,15 @@ footer {
 .hero-content h1 {
   font-size: 48px;
 }
+
+/* Tablet (Medium screens) */
+@media (max-width: 1024px) {
+  .book-item {
+    width: 45%; /* 2 columns on medium screens like tablets */
+    margin-bottom: 30px;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+}
