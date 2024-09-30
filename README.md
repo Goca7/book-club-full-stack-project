@@ -135,6 +135,9 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
 ### Imagery (tba)
 
+Image by Pexels from Pixabay
+Image by <a href="https://pixabay.com/users/pexels-2286921/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1853961">Pexels</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1853961">Pixabay</a>
+
 ### Wireframes
 
 #### Home Page
@@ -261,6 +264,7 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 - Lucidchart
 - Figma
 - MS Word
+- TinyPNG
 
 ## Agile Methodology (tba)
 
@@ -273,3 +277,5 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 - I created a new SECRET_KEY and set it as an environment variable in the env.py file. I modified the settings.py file to retrieve the new SECRET_KEY from the environment variables. To ensure the security of my Django app on Heroku, I set the SECRET_KEY as a config variable on Heroku as well.
 
 ## Credits (tba)
+
+Image by Pexels from Pixabay
