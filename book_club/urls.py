@@ -27,5 +27,6 @@ urlpatterns = [
     path('reviews/', include('reviews.urls')),
     # Delegate URLs starting with 'wish-list/' to the wish_list app
     path('wish-list/', include('wish_list.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
     # Add more paths as needed...
 ]
