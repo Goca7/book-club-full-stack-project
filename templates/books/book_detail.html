@@ -13,6 +13,16 @@
     />
   </head>
   <body>
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+      <li class="{% if message.tags %}{{ message.tags }}{% endif %}">
+        {{ message }}
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
     <div class="book-container">
       <!-- Book Title -->
       <h1>{{ book.title }}</h1>
@@ -39,7 +49,7 @@
       <!-- If the user is not logged in, display a login prompt -->
       {% else %}
       <p><a href="{% url 'login' %}">Log in</a> to leave a review.</p>
-      <!-- Link to the login page -->
+
       {% endif %}
 
       <h2>Reviews</h2>
