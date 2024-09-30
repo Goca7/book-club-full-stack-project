@@ -6,5 +6,20 @@
     <title>Page Turners - Home</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
   </head>
-  <body></body>
+
+  <body>
+    <!-- Navigation Bar -->
+    <header>
+      <nav>
+        <div class="logo">Page Turners</div>
+        <ul>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'books_view' %}">Books</a></li>
+          <li><a href="{% url 'login' %}">Login</a></li>
+          <li><a href="{% url 'signup' %}">Sign Up</a></li>
+        </ul>
+        <a href="{% url 'signup' %}" class="join-btn">Join Us</a>
+      </nav>
+    </header>
+  </body>
 </html>
