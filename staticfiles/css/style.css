@@ -9,12 +9,12 @@ h1,
 h2 {
   font-family: "Roboto", sans-serif;
   font-weight: bold;
-  color: #444; /* Dark gray */
+  color: #333; /* Dark gray */
 }
 
 a {
   text-decoration: none;
-  color: #444; /* Dark gray */
+  color: #333; /* Dark gray */
 }
 
 a:hover {
@@ -29,11 +29,11 @@ a:hover {
 
 .navbar-brand {
   font-size: 1.8rem;
-  color: #444; /* Dark gray */
+  color: #333; /* Dark gray */
 }
 
 .navbar-nav .nav-link {
-  color: #444; /* Dark gray */
+  color: #333; /* Dark gray */
 }
 
 .navbar-nav .nav-link:hover {
@@ -45,7 +45,7 @@ a:hover {
   height: 70vh; /* Hero section height */
   background-size: cover;
   background-position: center;
-  color: #888;
+  color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,7 +56,7 @@ a:hover {
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 1.5rem;
-  color: #888;
+  color: #333;
 }
 
 .hero .btn {
@@ -101,7 +101,7 @@ a:hover {
 .featured-books .card-title {
   font-size: 1.1rem;
   font-weight: bold;
-  color: #444;
+  color: #333;
 }
 
 .featured-books .card-text {
@@ -113,7 +113,7 @@ a:hover {
 .about-us {
   background-color: #f0f0f0;
   padding: 3rem 0;
-  color: #444;
+  color: #333;
 }
 
 .about-us h2 {
@@ -126,12 +126,24 @@ a:hover {
   color: #555;
 }
 
+.about-us .video-background {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  background-color: transparent; /* Remove black background */
+}
+
 .about-us .video-background iframe {
-  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 500px;
+  height: 100%;
+  border: none;
+  background-color: transparent; /* Ensure background is transparent */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: transparent;
 }
 
 /* Footer */
