@@ -25,5 +25,6 @@ urlpatterns = [
     path('books/', include('books.urls')),
     path('home/', TemplateView.as_view(template_name='home.html'), name='home_page'),
     path('wish-list/', include('wish_list.urls')),
+    path('', TemplateView.as_view(template_name='home.html'), name='home'),
 
 ]
