@@ -30,5 +30,6 @@ urlpatterns = [
     # Delegate URLs starting with 'wish-list/' to the wish_list app
     path('wish-list/', include('wish_list.urls')),
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    path('home/', TemplateView.as_view(template_name='home.html'), name='home_page'),
     # Add more paths as needed...
 ]
