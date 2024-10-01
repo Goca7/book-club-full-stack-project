@@ -20,16 +20,14 @@ from django.views.generic import TemplateView
 
 
 urlpatterns = [
-    # This is the root URL mapping to home.html
-    path('', TemplateView.as_view(template_name='home.html'), name='home'),
-
-    # This handles `/home/` as a secondary option for home
-    path('home/', TemplateView.as_view(template_name='home.html'), name='home_page'),
-
     path('accounts/', include('django.contrib.auth.urls')),  # Authentication URLs
     path('admin/', admin.site.urls),  # Admin URLs
     path('books/', include('books.urls')),  # Book-related URLs
     path('wish-list/', include('wish_list.urls')),  # Wish List URLs
 
+    # This is the root URL mapping to home.html
+    path('', TemplateView.as_view(template_name='home.html'), name='home'),
 
+    # This handles '/home/' as a secondary option for home
+    path('home/', TemplateView.as_view(template_name='home.html'), name='home_page'),
 ]
