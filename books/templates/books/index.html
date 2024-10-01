@@ -1,75 +1,79 @@
-{% extends 'base.html' %} {% block content %} {% load static %}
-
-<!-- index.html content starts here -->
-<body>
-  {% if messages %}
-  <ul class="messages">
-    {% for message in messages %}
-    <li class="{% if message.tags %}{{ message.tags }}{% endif %}">
-      {{ message }}
-    </li>
-    {% endfor %}
-  </ul>
-  {% endif %}
-
-  <div class="book-container">
-    <!-- Book Title -->
-    <h1>{{ book.title }}</h1>
-
-    <!-- Book Author -->
-    <p><strong>Author:</strong> {{ book.author }}</p>
-
-    <!-- Book Genre -->
-    <p><strong>Genre:</strong> {{ book.genre }}</p>
-
-    <!-- Book Description -->
-    <p><strong>Description:</strong> {{ book.description }}</p>
-
-    <!-- If the user is logged in, show the review form -->
-    {% if user.is_authenticated %}
-    <form method="POST">
-      <!-- Include CSRF token for security -->
-      {% csrf_token %}
-      <!-- Render the review form fields as paragraphs -->
-      {{ review_form.as_p }}
-      <!-- Submit button for adding a review -->
-      <button type="submit" name="add_review">Add Review</button>
-    </form>
-    <!-- If the user is not logged in, display a login prompt -->
-    {% else %}
-    <p><a href="{% url 'login' %}">Log in</a> to leave a review.</p>
-    {% endif %}
-
-    <h2>Reviews</h2>
-    <ul>
-      {% for review in reviews %}
-      <li>
-        <strong>{{ review.user.username }}</strong>: {{ review.review_text }}
-        <em>({{ review.created_at }})</em>
-        {% if user == review.user or user.is_superuser %}
-        <!-- Link for editing the review -->
-        <a href="{% url 'edit_review' review.id %}">Edit</a>
-
-        <!-- Form for deleting the review -->
-        <form
-          method="POST"
-          action="{% url 'delete_review' review.id %}"
-          style="display: inline"
-        >
-          {% csrf_token %}
-          <button type="submit">Delete</button>
-        </form>
-        {% endif %}
-      </li>
-      {% empty %}
-      <li>No reviews yet.</li>
-      {% endfor %}
-    </ul>
-
-    <!-- Link to go back to the Book List -->
-    <p><a href="{% url 'books_view' %}">Back to Book List</a></p>
+{% extends 'base.html' %} {% block content %}
+<!-- Hero Section with Background Image -->
+<section
+  class="hero text-center py-5"
+  style="
+    background-image: url('{% static 'images/hero-image.jpg' %}');
+    background-size: cover;
+    background-position: center;
+  "
+>
+  <div class="container">
+    <h1 class="display-4 text-white">Welcome to Page Turners</h1>
+    <a href="{% url 'signup' %}" class="btn btn-danger mt-4">Join Now</a>
   </div>
-</body>
+</section>
 
-<!-- index.html content ends here -->
-{% endblock %} {% block copyright %} Copyright 2023 Gordana P {% endblock %}
+<!-- Featured Books Section -->
+<section class="featured-books py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Featured Books</h2>
+    <div class="row">
+      <!-- Book 1 -->
+      <div class="col-md-4 col-lg-2">
+        <div class="card h-100">
+          <img
+            src="{% static 'img/book1.jpg' %}"
+            class="card-img-top"
+            alt="Book 1"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Book Title</h5>
+            <p class="card-text">Book Summary</p>
+          </div>
+        </div>
+      </div>
+      <!-- Repeat for additional books -->
+    </div>
+  </div>
+</section>
+
+<!-- About Us Section with Background Video -->
+<section class="about-us py-5 text-center bg-light">
+  <div class="container">
+    <h2>About Us</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="video-background">
+          <iframe
+            width="100%"
+            height="400"
+            src="https://www.youtube.com/embed/0x58MuUnaSo?autoplay=1&mute=1&loop=1&controls=0&playlist=0x58MuUnaSo"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <p class="lead mt-4">
+          Welcome to Page Turners, where every page turned is a new adventure
+          waiting to unfold! Our mission? To ignite your passion for reading and
+          connect you with fellow bibliophiles who share your love for the
+          written word.
+        </p>
+        <p class="lead">
+          Dive into our curated selection of books that span genres, eras, and
+          styles. From spine-tingling thrillers to heartwarming romances, our
+          collection is designed to keep you on the edge of your seat—or curled
+          up in your favorite reading nook.
+        </p>
+        <p class="lead">
+          We believe that every book has a story, and we’re here to help you
+          discover yours! So grab your favorite mug, settle in, and let’s turn
+          some pages together!
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
