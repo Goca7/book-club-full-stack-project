@@ -49,7 +49,6 @@
       <!-- If the user is not logged in, display a login prompt -->
       {% else %}
       <p><a href="{% url 'login' %}">Log in</a> to leave a review.</p>
-
       {% endif %}
 
       <h2>Reviews</h2>
@@ -62,7 +61,7 @@
           <!-- Buttons for editing and deleting the review -->
           <form
             method="POST"
-            action="{% url 'delete_review' review.id %}"
+            action="{% url 'book_details_view' book.slug %}?edit_review={{ review.id }}"
             style="display: inline"
           >
             {% csrf_token %}
@@ -70,12 +69,13 @@
           </form>
           <form
             method="POST"
-            action="{% url 'delete_review' review.id %}"
+            action="{% url 'delete_review' book.slug review.id %}"
             style="display: inline"
           >
             {% csrf_token %}
             <button type="submit">Delete</button>
           </form>
+          {% endif %}
         </li>
         {% empty %}
         <li>No reviews yet.</li>
