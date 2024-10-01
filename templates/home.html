@@ -3,83 +3,82 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page Turners - Home</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <title>{{ book.title }} - Book Details</title>
+
+    <!-- Load the external CSS file -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'books/styles.css' %}"
+    />
   </head>
-
   <body>
-    <!-- Navigation Bar -->
-    <header>
-      <nav>
-        <div class="logo">Page Turners</div>
-        <ul>
-          <li><a href="{% url 'home' %}">Home</a></li>
-          <li><a href="{% url 'books_view' %}">Books</a></li>
-          <li><a href="{% url 'login' %}">Login</a></li>
-          <li><a href="{% url 'signup' %}">Sign Up</a></li>
-        </ul>
-        <a href="{% url 'signup' %}" class="join-btn">Join Us</a>
-      </nav>
-    </header>
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+      <li class="{% if message.tags %}{{ message.tags }}{% endif %}">
+        {{ message }}
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
 
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-image">
-        <img
-          src="{% static 'images/hero-image.jpg' %}"
-          alt="A man seated on a bench, engrossed in reading a book, surrounded by a serene outdoor environment."
-        />
-      </div>
-      <div class="hero-content">
-        <h1>Read On</h1>
-        <p>
-          Join the wildest book club in town and unleash your inner bookworm!
-        </p>
-        <a href="{% url 'signup' %}" class="btn">Join Now</a>
-      </div>
-    </section>
+    <div class="book-container">
+      <!-- Book Title -->
+      <h1>{{ book.title }}</h1>
 
-    <!-- Featured Books -->
-    <section class="featured-books">
-      <h2>Latest Book Buzz</h2>
-      <div class="book-grid">
-        <!-- Placeholder for book grid/carousel -->
-        <div class="book-item">
-          <img src="{% static 'images/book1.jpg' %}" alt="Book 1" />
-          <h3>New Release: The Book Thief</h3>
-          <p>September 25, 2024</p>
-        </div>
+      <!-- Book Author -->
+      <p><strong>Author:</strong> {{ book.author }}</p>
 
-        <div class="book-item">
-          <img src="{% static 'images/book2.jpg' %}" alt="Book 2" />
-          <h3>Bestseller: The Midnight Library</h3>
-          <p>September 20, 2024</p>
-        </div>
-        <!-- Add more books -->
-      </div>
-    </section>
+      <!-- Book Genre -->
+      <p><strong>Genre:</strong> {{ book.genre }}</p>
 
-    <!-- About Section -->
-    <section class="about-us">
-      <h2>Join our vibrant community of book lovers!</h2>
-      <p>
-        Welcome to Page Turners, where every page turned is a new adventure
-        waiting to unfold! Our mission? To ignite your passion for reading and
-        connect you with fellow bibliophiles who share your love for the written
-        word. Whether you’re a casual reader or a literary aficionado, we’ve got
-        something for everyone! Dive into our curated selection of books that
-        span genres, eras, and styles. From spine-tingling thrillers to
-        heartwarming romances, our collection is designed to keep you on the
-        edge of your seat—or curled up in your favorite reading nook. We believe
-        that every book has a story, and we’re here to help you discover yours!
-        So grab your favorite mug, settle in, and let’s turn some pages
-        together!
-      </p>
-    </section>
+      <!-- Book Description -->
+      <p><strong>Description:</strong> {{ book.description }}</p>
 
-    <!-- Footer -->
-    <footer>
-      <p>Privacy Policy | Contact | Social Media</p>
-    </footer>
+      <!-- If the user is logged in, show the review form -->
+      {% if user.is_authenticated %}
+      <form method="POST">
+        <!-- Include CSRF token for security -->
+        {% csrf_token %}
+        <!-- Render the review form fields as paragraphs -->
+        {{ review_form.as_p }}
+        <!-- Submit button for adding a review -->
+        <button type="submit" name="add_review">Add Review</button>
+      </form>
+      <!-- If the user is not logged in, display a login prompt -->
+      {% else %}
+      <p><a href="{% url 'login' %}">Log in</a> to leave a review.</p>
+      {% endif %}
+
+      <h2>Reviews</h2>
+      <ul>
+        {% for review in reviews %}
+        <li>
+          <strong>{{ review.user.username }}</strong>: {{ review.review_text }}
+          <em>({{ review.created_at }})</em>
+          {% if user == review.user or user.is_superuser %}
+          <!-- Link for editing the review -->
+          <a href="{% url 'edit_review' review.id %}">Edit</a>
+
+          <!-- Form for deleting the review -->
+          <form
+            method="POST"
+            action="{% url 'delete_review' review.id %}"
+            style="display: inline"
+          >
+            {% csrf_token %}
+            <button type="submit">Delete</button>
+          </form>
+          {% endif %}
+        </li>
+        {% empty %}
+        <li>No reviews yet.</li>
+        {% endfor %}
+      </ul>
+
+      <!-- Link to go back to the Book List -->
+      <p><a href="{% url 'books_view' %}">Back to Book List</a></p>
+    </div>
   </body>
 </html>
