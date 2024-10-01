@@ -20,3 +20,22 @@ a {
 a:hover {
   color: red; /* CTA hover effect */
 }
+
+/* Navigation Bar */
+.navbar {
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  color: #333; /* Dark gray */
+}
+
+.navbar-nav .nav-link {
+  color: #333; /* Dark gray */
+}
+
+.navbar-nav .nav-link:hover {
+  color: red; /* Hover effect for nav links */
+}
