@@ -20,11 +20,11 @@ from django.views.generic import TemplateView
 
 
 urlpatterns = [
+    path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
     path('books/', include('books.urls')),
     path('wish-list/', include('wish_list.urls')),
 
-    # Home page routing (keep only one)
-    path('', TemplateView.as_view(template_name='home.html'), name='home'),
+
 ]
