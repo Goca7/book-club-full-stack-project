@@ -28,5 +28,6 @@ urlpatterns = [
     # path('reviews/', include('reviews.urls')),
     # Delegate URLs starting with 'wish-list/' to the wish_list app
     path('wish-list/', include('wish_list.urls')),
+    path('', TemplateView.as_view(template_name='home.html'), name='home'),
     # Add more paths as needed...
 ]
