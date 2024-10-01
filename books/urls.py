@@ -6,7 +6,8 @@ urlpatterns = [
     path('create/', views.create_book, name='create_book'),
 
     # URL for the book list (Read list of all books)
-    path('', views.books_view, name='books_view'),
+    # Changed from '' to 'list/'
+    path('list/', views.books_view, name='books_view'),
 
     # URL for updating an existing book (Update a book's details)
     path('<slug:slug>/update/', views.update_book, name='update_book'),
