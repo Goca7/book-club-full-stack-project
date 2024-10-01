@@ -22,12 +22,9 @@ from django.views.generic import TemplateView
 urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
-    path('books/', include('books.urls')),  # Book-related URLs
-    path('wish-list/', include('wish_list.urls')),  # Wish list URLs
+    path('books/', include('books.urls')),
+    path('wish-list/', include('wish_list.urls')),
 
-    # Home page routing
-    path('', TemplateView.as_view(template_name='home.html'),
-         name='home'),  # Root URL points to home page
-    path('home/', TemplateView.as_view(template_name='home.html'),
-         name='home_page'),  # `/home` also points to home page
+    # Home page routing (keep only one)
+    path('', TemplateView.as_view(template_name='home.html'), name='home'),
 ]
