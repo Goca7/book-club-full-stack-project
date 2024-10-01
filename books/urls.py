@@ -18,6 +18,6 @@ urlpatterns = [
     path('detail/<slug:slug>/', views.book_details_view, name='book_details_view'),
 
     # URL for deleting a review (nested under the book's slug for consistency)
-    path('<slug:slug>/review/delete/<int:review_id>/',
+    path('detail<slug:slug>/review/delete/<int:review_id>/',
          views.delete_review, name='delete_review'),
 ]
