@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),  # Admin URLs
     path('books/', include('books.urls')),  # Book-related URLs
     path('wish-list/', include('wish_list.urls')),  # Wish List URLs
-    path("", TemplateView.as_view(template_name="home.html")),  # Home page URL
+    path("", TemplateView.as_view(
+        template_name="book_templates/index.html"), name="home"),  # Home page URL
 
 ]
