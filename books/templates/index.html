@@ -1,0 +1,76 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+
+<!-- index.html content starts here -->
+<body>
+  {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+    <li class="{% if message.tags %}{{ message.tags }}{% endif %}">
+      {{ message }}
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  <div class="book-container">
+    <!-- Book Title -->
+    <h1>{{ book.title }}</h1>
+
+    <!-- Book Author -->
+    <p><strong>Author:</strong> {{ book.author }}</p>
+
+    <!-- Book Genre -->
+    <p><strong>Genre:</strong> {{ book.genre }}</p>
+
+    <!-- Book Description -->
+    <p><strong>Description:</strong> {{ book.description }}</p>
+
+    <!-- If the user is logged in, show the review form -->
+    {% if user.is_authenticated %}
+    <form method="POST">
+      <!-- Include CSRF token for security -->
+      {% csrf_token %}
+      <!-- Render the review form fields as paragraphs -->
+      {{ review_form.as_p }}
+      <!-- Submit button for adding a review -->
+      <button type="submit" name="add_review">Add Review</button>
+    </form>
+    <!-- If the user is not logged in, display a login prompt -->
+    {% else %}
+    <p><a href="{% url 'login' %}">Log in</a> to leave a review.</p>
+    {% endif %}
+
+    <h2>Reviews</h2>
+    <ul>
+      {% for review in reviews %}
+      <li>
+        <strong>{{ review.user.username }}</strong>: {{ review.review_text }}
+        <em>({{ review.created_at }})</em>
+        {% if user == review.user or user.is_superuser %}
+        <!-- Link for editing the review -->
+        <a href="{% url 'edit_review' review.id %}">Edit</a>
+
+        <!-- Form for deleting the review -->
+        <form
+          method="POST"
+          action="{% url 'delete_review' review.id %}"
+          style="display: inline"
+        >
+          {% csrf_token %}
+          <button type="submit">Delete</button>
+        </form>
+        {% endif %}
+      </li>
+      {% empty %}
+      <li>No reviews yet.</li>
+      {% endfor %}
+    </ul>
+
+    <!-- Link to go back to the Book List -->
+    <p><a href="{% url 'books_view' %}">Back to Book List</a></p>
+  </div>
+</body>
+
+<!-- index.html content ends here -->
+{% endblock %} {% block copyright %}Copyright 2024 Gordana Perencevic{% endblock
+%}
