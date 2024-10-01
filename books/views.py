@@ -5,6 +5,7 @@ from .forms import BookForm
 from reviews.models import Review
 from reviews.forms import ReviewForm
 from django.contrib.auth.decorators import login_required
+from django.views import generic
 
 
 # View to display a list of all books
