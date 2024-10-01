@@ -25,7 +25,7 @@ urlpatterns = [
     # Delegate URLs starting with 'books/' to the books app
     path('books/', include('books.urls')),
     # Delegate URLs starting with 'reviews/' to the reviews app
-    path('reviews/', include('reviews.urls')),
+    # path('reviews/', include('reviews.urls')),
     # Delegate URLs starting with 'wish-list/' to the wish_list app
     path('wish-list/', include('wish_list.urls')),
     # Add more paths as needed...
