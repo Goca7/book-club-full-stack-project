@@ -15,7 +15,7 @@ urlpatterns = [
     path('<slug:slug>/delete/', views.delete_book, name='delete_book'),
 
     # URL for a single book (Read a single book's details)
-    path('<slug:slug>/', views.book_details_view, name='book_details_view'),
+    path('detail/<slug:slug>/', views.book_details_view, name='book_details_view'),
 
     # URL for deleting a review (nested under the book's slug for consistency)
     path('<slug:slug>/review/delete/<int:review_id>/',
