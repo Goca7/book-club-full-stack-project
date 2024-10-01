@@ -71,3 +71,39 @@ a:hover {
   background-color: darkred;
   color: white;
 }
+
+/* Featured Books Section */
+.featured-books {
+  background-color: #f9f9f9;
+  padding: 2rem 0;
+}
+
+.featured-books h2 {
+  margin-bottom: 2rem;
+}
+
+.featured-books .card {
+  border: none;
+  background-color: white;
+  transition: box-shadow 0.3s;
+}
+
+.featured-books .card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.featured-books .card img {
+  height: 250px;
+  object-fit: cover;
+}
+
+.featured-books .card-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.featured-books .card-text {
+  font-size: 0.9rem;
+  color: #777;
+}
