@@ -21,15 +21,13 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
-    # Django admin site URL
     path('admin/', admin.site.urls),
-    # Delegate URLs starting with 'books/' to the books app
-    path('books/', include('books.urls')),
-    # Delegate URLs starting with 'reviews/' to the reviews app
-    # path('reviews/', include('reviews.urls')),
-    # Delegate URLs starting with 'wish-list/' to the wish_list app
-    path('wish-list/', include('wish_list.urls')),
-    path('', TemplateView.as_view(template_name='home.html'), name='home'),
-    path('home/', TemplateView.as_view(template_name='home.html'), name='home_page'),
-    # Add more paths as needed...
+    path('books/', include('books.urls')),  # Book-related URLs
+    path('wish-list/', include('wish_list.urls')),  # Wish list URLs
+
+    # Home page routing
+    path('', TemplateView.as_view(template_name='home.html'),
+         name='home'),  # Root URL points to home page
+    path('home/', TemplateView.as_view(template_name='home.html'),
+         name='home_page'),  # `/home` also points to home page
 ]
