@@ -207,3 +207,44 @@ footer {
 .book-container form button:hover {
   background-color: #45a049;
 }
+
+/* Reviews Section */
+.book-container h2 {
+  font-size: 1.8rem;
+  margin-top: 40px;
+}
+
+.book-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.book-container li {
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+
+.book-container li strong {
+  font-size: 1.1rem;
+}
+
+.book-container li em {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.book-container li form {
+  display: inline;
+}
+
+/* Footer link to the book list */
+.book-container p a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.book-container p a:hover {
+  text-decoration: underline;
+}
