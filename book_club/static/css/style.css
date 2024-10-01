@@ -248,3 +248,51 @@ footer {
 .book-container p a:hover {
   text-decoration: underline;
 }
+
+/* Responsive design for book detail page */
+@media (max-width: 1024px) {
+  .book-container h1 {
+    font-size: 2rem;
+  }
+
+  .book-container p {
+    font-size: 1rem;
+  }
+
+  .book-container h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .book-container {
+    padding: 15px;
+    margin: 20px;
+  }
+
+  .book-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .book-container p {
+    font-size: 0.95rem;
+  }
+
+  .book-container h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .book-container p {
+    font-size: 0.85rem;
+  }
+
+  .book-container h2 {
+    font-size: 1.2rem;
+  }
+}
