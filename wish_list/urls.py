@@ -4,6 +4,9 @@ from .views import CustomLoginView
 
 urlpatterns = [
 
+    # Custom login view pointing to wish_list/login.html
+    path('login/', CustomLoginView.as_view(), name='login'),
+
     # URL for the signup page
     path('signup/', views.signup_view, name='signup'),
 
@@ -14,8 +17,6 @@ urlpatterns = [
     path('remove/<int:wish_list_id>/', views.remove_from_wish_list,
          name='remove_from_wish_list'),
 
-    # Custom login view pointing to wish_list/login.html
-    path('login/', CustomLoginView.as_view(), name='login'),
 
     # URL for displaying the wish list
     path('', views.wish_list_view, name='wish_list_view'),

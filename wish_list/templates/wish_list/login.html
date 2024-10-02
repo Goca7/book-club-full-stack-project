@@ -1,9 +1,64 @@
 {% extends 'base.html' %} {% block content %}
-<div class="container">
-  <h2>Login</h2>
-  <form method="POST">
-    {% csrf_token %} {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Login</button>
-  </form>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h2 class="text-center mb-4">Login to Your Account</h2>
+
+      <!-- Check for form errors and display them -->
+      {% if form.errors %}
+      <div class="alert alert-danger">
+        <strong
+          >There was an error with your login details. Please try again.</strong
+        >
+      </div>
+      {% endif %}
+
+      <!-- Login form -->
+      <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %} {{ form.as_p }}
+        <!-- Renders the form fields in paragraphs -->
+        <button type="submit" class="btn btn-primary w-100 mt-3">Login</button>
+      </form>
+
+      <!-- Link to the Signup Modal -->
+      <p class="text-center mt-3">
+        Don't have an account?
+        <a href="#" data-bs-toggle="modal" data-bs-target="#signupModal"
+          >Join now</a
+        >
+      </p>
+    </div>
+  </div>
 </div>
+
+<!-- Signup Modal -->
+<div
+  class="modal fade"
+  id="signupModal"
+  tabindex="-1"
+  aria-labelledby="signupModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="signupModalLabel">Create an Account</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <!-- Signup form -->
+        <form action="{% url 'signup' %}" method="POST">
+          {% csrf_token %} {{ form.as_p }}
+          <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 {% endblock %}
