@@ -6,7 +6,7 @@ urlpatterns = [
     path('', views.wish_list_view, name='wish_list_view'),
 
     # URL for the signup page
-    path('signup/', views.signup, name='signup'),
+    path('signup/', views.signup_view, name='signup'),
 
     # URL for adding a book to the wish list
     path('add/<int:book_id>/', views.add_to_wish_list, name='add_to_wish_list'),

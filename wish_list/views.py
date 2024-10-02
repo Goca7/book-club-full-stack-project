@@ -65,4 +65,4 @@ def signup_view(request):
     else:
         form = UserCreationForm()
     # Render the signup page with the form
-    return render(request, 'registration/signup.html', {'form': form})
+    return render(request, 'wish_list/signup.html', {'form': form})
