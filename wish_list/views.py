@@ -74,8 +74,3 @@ def signup_view(request):
         form = UserCreationForm()
     # Render the signup page with the form
     return render(request, 'wish_list/signup.html', {'form': form})
-
-
-# Custom Login view that uses a template in the wish_list directory
-class CustomLoginView(LoginView):
-    template_name = 'wish_list/login.html'

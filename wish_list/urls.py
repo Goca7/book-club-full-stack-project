@@ -20,6 +20,4 @@ urlpatterns = [
     # URL for displaying the wish list
     path('', views.wish_list_view, name='wish_list_view'),
 
-
-
 ]

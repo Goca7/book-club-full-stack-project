@@ -125,7 +125,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Authentication-related settings
 LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'wish_list_view'
+LOGIN_REDIRECT_URL = None
 
 
 # Internationalization
