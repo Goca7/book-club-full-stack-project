@@ -215,3 +215,17 @@ a:hover {
   height: 250px;
   object-fit: cover;
 }
+
+/* Pagination Styles */
+.pagination .page-item.active .page-link {
+  background-color: red;
+  border-color: red;
+}
+
+.pagination .page-link {
+  color: #333;
+}
+
+.pagination .page-link:hover {
+  background-color: lightgray;
+}
