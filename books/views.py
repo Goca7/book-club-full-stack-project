@@ -6,7 +6,7 @@ from reviews.models import Review
 from reviews.forms import ReviewForm
 from django.contrib.auth.decorators import login_required
 from django.views import generic
-grom django.core.paginator import Paginator
+from django.core.paginator import Paginator
 
 
 # View to display a list of all books with pagination
