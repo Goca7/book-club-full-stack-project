@@ -6,12 +6,17 @@ from reviews.models import Review
 from reviews.forms import ReviewForm
 from django.contrib.auth.decorators import login_required
 from django.views import generic
+grom django.core.paginator import Paginator
 
 
-# View to display a list of all books
+# View to display a list of all books with pagination
 def books_view(request):
     books = Book.objects.all()  # Fetch all books from the database
-    return render(request, 'books/book_list.html', {'books': books})
+    pagination = Paginator(books, 3)  # Set the number of books per page to 3
+    page_number = request.GET.get('page')
+    page_books = Paginator.get_page(page_number
+                                    )
+    return render(request, 'books/book_list.html', {'page_books': page_books})
 
 
 # View to display a single book using its slug and handle reviews
