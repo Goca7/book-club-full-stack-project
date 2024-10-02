@@ -23,9 +23,8 @@ def add_to_wish_list(request, book_id):
         # Redirect to the login page if the user is not authenticated
         return redirect('login')
 
+
 # Display the "Want-to-read" list of books for the current user
-
-
 def wish_list_view(request):
     if request.user.is_authenticated:
         # Fetch all books from the WishList model associated with the current user
@@ -35,6 +34,21 @@ def wish_list_view(request):
         }
         # Render the template with the books in the wish list
         return render(request, 'wish_list/wish_list.html', context)
+    else:
+        # Redirect to the login page if the user is not authenticated
+        return redirect('login')
+
+
+# Remove a book from the "Want-to-read" list
+def remove_from_wish_list(request, wish_list_id):
+    if request.user.is_authenticated:
+        # Fetch the specific WishList entry by its ID and ensure it belongs to the authenticated user
+        wish_list_entry = WishList.objects.get(
+            id=wish_list_id, user=request.user)
+        # Delete the WishList entry (remove the book from the user's "Want-to-read" list)
+        wish_list_entry.delete()
+        # Redirect the user back to their Wish List page after successfully removing the book
+        return redirect('wish_list')
     else:
         # Redirect to the login page if the user is not authenticated
         return redirect('login')
