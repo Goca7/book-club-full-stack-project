@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Book
 from .forms import BookForm
+from wish_list.models import WishList
 from reviews.models import Review
 from reviews.forms import ReviewForm
 from django.contrib.auth.decorators import login_required, user_passes_test
