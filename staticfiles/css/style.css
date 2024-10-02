@@ -2,19 +2,19 @@
 body {
   font-family: "Lato", sans-serif;
   background-color: white;
-  color: #333; /* Dark gray text */
+  color: #222;
 }
 
 h1,
 h2 {
   font-family: "Roboto", sans-serif;
   font-weight: bold;
-  color: #222; /* Dark gray */
+  color: #222;
 }
 
 a {
   text-decoration: none;
-  color: #333; /* Dark gray */
+  color: #222;
 }
 
 a:hover {
@@ -27,13 +27,8 @@ a:hover {
   border-bottom: 1px solid #ddd;
 }
 
-.navbar-brand {
-  font-size: 1.8rem;
-  color: #333; /* Dark gray */
-}
-
 .navbar-nav .nav-link {
-  color: #333; /* Dark gray */
+  color: #222; /* Dark gray */
 }
 
 .navbar-nav .nav-link:hover {
@@ -81,7 +76,7 @@ a:hover {
 
 .featured-books h2 {
   margin-bottom: 2rem;
-  color: #222; /* Darker gray for section heading */
+  color: #222;
 }
 
 .featured-books .card {
@@ -102,19 +97,19 @@ a:hover {
 .featured-books .card-title {
   font-size: 1.1rem;
   font-weight: bold;
-  color: #333;
+  color: #222;
 }
 
 .featured-books .card-text {
   font-size: 0.9rem;
-  color: #555;
+  color: #222;
 }
 
 /* About Us Section */
 .about-us {
   background-color: #f0f0f0;
   padding: 3rem 0;
-  color: #222; /* Darker gray */
+  color: #222;
 }
 
 .about-us h2 {
@@ -124,7 +119,7 @@ a:hover {
 .about-us p.lead {
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #555; /* Slightly darker gray */
+  color: #555;
 }
 
 .about-us .video-background {
@@ -234,7 +229,7 @@ a:hover {
 }
 
 .pagination .page-link {
-  color: #333; /* Dark gray for inactive pages */
+  color: #222;
 }
 
 .pagination .page-link:hover {
