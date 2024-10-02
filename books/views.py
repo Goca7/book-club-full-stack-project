@@ -4,13 +4,18 @@ from .models import Book
 from .forms import BookForm
 from reviews.models import Review
 from reviews.forms import ReviewForm
-from django.contrib.auth.decorators import login_required
-from django.views import generic
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.core.paginator import Paginator
-from django.contrib.auth.decorators import user_passes_test
 
+# Utility function to check if the user is a superuser
+
+
+def is_superuser(user):
+    return user.is_superuser
 
 # View to display a list of all books with pagination
+
+
 def books_view(request):
     books = Book.objects.all()  # Fetch all books from the database
     paginator = Paginator(books, 3)  # Set the number of books per page to 3
@@ -20,8 +25,9 @@ def books_view(request):
     page_books = paginator.get_page(page_number)
     return render(request, 'books/book_list.html', {'page_books': page_books})
 
-
 # View to allow a logged-in user to add a book to their "Want-to-read" list from the book listing page
+
+
 @login_required(login_url='login')
 def add_to_wish_list_from_list(request, book_id):
     book = get_object_or_404(Book, id=book_id)
@@ -41,8 +47,10 @@ def add_to_wish_list_from_list(request, book_id):
         # Redirect back to the same book list page
         return redirect('books_view')
 
-
 # View to display a single book using its slug and handle reviews
+
+
+@login_required(login_url='login')
 def book_details_view(request, slug):
     # Fetch the book from the database using its slug
     book = get_object_or_404(Book, slug=slug)
@@ -64,13 +72,17 @@ def book_details_view(request, slug):
     elif 'edit_review' in request.POST:
         review_id = request.POST.get('review_id')
         review = get_object_or_404(Review, id=review_id)
-        review_form = ReviewForm(request.POST, instance=review)
-        if review_form.is_valid():
-            review_form.save()
-            messages.success(request, 'Review updated successfully!')
-            return redirect('book_details_view', slug=book.slug)
+        if review.user == request.user:  # Ensure only the review owner can edit
+            review_form = ReviewForm(request.POST, instance=review)
+            if review_form.is_valid():
+                review_form.save()
+                messages.success(request, 'Review updated successfully!')
+                return redirect('book_details_view', slug=book.slug)
+        else:
+            messages.error(request, 'You cannot edit this review.')
+
     else:
-        review_form = ReviewForm()  # Create an empty form for new reviews
+        review_form = ReviewForm()
 
     context = {
         'book': book,
@@ -79,30 +91,28 @@ def book_details_view(request, slug):
     }
     return render(request, 'books/book_detail.html', context)
 
-
 # Delete a review (only the review owner or a superuser can delete)
-@login_required
+
+
+@login_required(login_url='login')
 def delete_review(request, review_id):
     review = get_object_or_404(Review, id=review_id)
 
-    # Check if the user is either the review owner or a superuser
+    # Check if the user is either the owner of the review or a superuser
     if request.user == review.user or request.user.is_superuser:
-        review.delete()
+        review.delete()  # Delete the review if the condition is met
         messages.success(request, "Review deleted successfully.")
     else:
+        # Show an error message if the user is neither the owner nor a superuser
         messages.error(
             request, "You do not have permission to delete this review.")
 
-    # Redirect back to the book's detail page with the slug
+    # Redirect back to the book's detail page using the slug of the book
     return redirect('book_details_view', slug=review.book.slug)
 
-
-# Utility function to check if the user is a superuser
-def is_superuser(user):
-    return user.is_superuser
-
-
 # View to create a new book (only superusers)
+
+
 @user_passes_test(is_superuser, login_url='login')
 def create_book(request):
     if request.method == 'POST':
@@ -116,8 +126,9 @@ def create_book(request):
         form = BookForm()
     return render(request, 'books/create_book.html', {'form': form})
 
-
 # View to update an existing book (only superusers)
+
+
 @user_passes_test(is_superuser, login_url='login')
 def update_book(request, slug):
     book = get_object_or_404(Book, slug=slug)
@@ -131,13 +142,14 @@ def update_book(request, slug):
         form = BookForm(instance=book)
     return render(request, 'books/update_book.html', {'form': form})
 
-
 # View to delete a book (only superusers)
+
+
 @user_passes_test(is_superuser, login_url='login')
 def delete_book(request, slug):
     book = get_object_or_404(Book, slug=slug)
     if request.method == 'POST':
-        book.delete()
+        book.delete()  # Delete the book from the database
         messages.success(request, 'Book deleted successfully!')
         return redirect('books_view')
     return render(request, 'books/delete_book.html', {'book': book})
