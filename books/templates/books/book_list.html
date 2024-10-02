@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container py-5">
+  <h2 class="text-center mb-4">Book Listing</h2>
+
+  <div class="row">
+    {% for book in page_books %}
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <img
+          src="{{ book.cover_image.url }}"
+          class="card-img-top"
+          alt="{{ book.title }} Cover"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ book.title }}</h5>
+          <p class="card-text"><strong>Author:</strong> {{ book.author }}</p>
+          <p class="card-text">{{ book.description|truncatewords:20 }}</p>
+          <a
+            href="{% url 'book_details_view' book.slug %}"
+            class="btn btn-primary"
+            >View Details</a
+          >
+          {% if user.is_authenticated %}
+          <form
+            method="POST"
+            action="{% url 'add_to_wish_list_from_list' book.id %}"
+            class="mt-2"
+          >
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Want-to-read</button>
+          </form>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
