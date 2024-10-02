@@ -23,7 +23,7 @@
       <div class="col-md-4 col-lg-2">
         <div class="card h-100">
           <img
-            src="{% static 'images/outsider.png' %}"
+            src="{% static 'images/outsider.PNG' %}"
             class="card-img-top"
             alt="Outsider Book Cover"
           />
@@ -37,13 +37,12 @@
           </div>
         </div>
       </div>
-      <!-- Additional Books... -->
 
       <!-- Book 2: Stoner -->
       <div class="col-md-4 col-lg-2">
         <div class="card h-100">
           <img
-            src="{% static 'images/stoner.png' %}"
+            src="{% static 'images/stoner.PNG' %}"
             class="card-img-top"
             alt="Stoner Book Cover"
           />
@@ -61,13 +60,14 @@
   </div>
 </section>
 
-<!-- About Us Section with YouTube Video -->
+<!-- About Us Section with Responsive YouTube Video -->
 <section class="about-us py-5 text-center bg-light">
   <div class="container">
     <h2>About Us</h2>
     <div class="row">
       <div class="col-md-12">
-        <div class="video-background">
+        <div class="video-wrapper" style="max-width: 100%; margin: 0 auto">
+          <!-- YouTube video iframe -->
           <iframe
             width="560"
             height="315"
@@ -79,12 +79,26 @@
           >
           </iframe>
         </div>
-        <p class="lead mt-4">
-          Welcome to Page Turners, where every page turned is a new adventure
-          waiting to unfold! Our mission? To ignite your passion for reading and
-          connect you with fellow bibliophiles who share your love for the
-          written word.
-        </p>
+        <!-- About Us text -->
+        <div class="about-us-text mt-4">
+          <p class="lead">
+            Welcome to Page Turners, where every page turned is a new adventure
+            waiting to unfold! Our mission? To ignite your passion for reading
+            and connect you with fellow bibliophiles who share your love for the
+            written word.
+          </p>
+          <p class="lead">
+            Dive into our curated selection of books that span genres, eras, and
+            styles. From spine-tingling thrillers to heartwarming romances, our
+            collection is designed to keep you on the edge of your seat—or
+            curled up in your favorite reading nook.
+          </p>
+          <p class="lead">
+            We believe that every book has a story, and we’re here to help you
+            discover yours! So grab your favorite mug, settle in, and let’s turn
+            some pages together!
+          </p>
+        </div>
       </div>
     </div>
   </div>
