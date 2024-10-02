@@ -19,6 +19,27 @@ def books_view(request):
     return render(request, 'books/book_list.html', {'page_books': page_books})
 
 
+# View to allow a logged-in user to add a book to their "Want-to-read" list from the book listing page
+@login_required(login_url='login')
+def add_to_wish_list_from_list(request, book_id):
+    book = get_object_or_404(Book, id=book_id)
+    wish_list_entry, created = WishList.objects.get_or_create(
+        user=request.user, book=book)
+
+    if created:
+        # Message indicating the book was successfully added to the wish list
+        messages.success(
+            request, f'{book.title} was added to your Want-to-read list.')
+        # Redirect to the same book list page after adding the book to the list
+        return redirect('books_view')
+    else:
+        # Message indicating the book was already in the wish list
+        messages.info(
+            request, f'{book.title} is already in your Want-to-read list.')
+        # Redirect back to the same book list page
+        return redirect('books_view')
+
+
 # View to display a single book using its slug and handle reviews
 def book_details_view(request, slug):
     # Fetch the book from the database using its slug
