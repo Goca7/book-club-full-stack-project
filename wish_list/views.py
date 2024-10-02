@@ -7,6 +7,20 @@ from .models import WishList
 from books.models import Book
 
 
+# Custom Login view that redirects based on user role
+class CustomLoginView(LoginView):
+    template_name = 'wish_list/login.html'
+
+    def form_valid(self, form):
+        user = form.get_user()
+        # If the user is an admin, redirect them to the admin panel
+        if user.is_superuser:
+            return redirect('/admin/')
+        # Otherwise, redirect them to their Want-to-read list
+        else:
+            return redirect('wish_list_view')
+
+
 # Create a new entry in the "Want-to-read" list
 # Redirect to login if the user is not authenticated
 @login_required(login_url='login')
