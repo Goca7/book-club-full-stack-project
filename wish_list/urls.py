@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views  # Import views from the wish_list app
+from .views import CustomLoginView
 
 urlpatterns = [
     # URL for displaying the wish list
@@ -14,4 +15,8 @@ urlpatterns = [
     # URL for removing a book from the wish list
     path('remove/<int:wish_list_id>/', views.remove_from_wish_list,
          name='remove_from_wish_list'),
+
+    # Custom login view pointing to wish_list/login.html
+    path('login/', CustomLoginView.as_view(), name='login'),
+
 ]
