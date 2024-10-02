@@ -1,0 +1,45 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+  <h2>Your "Want-to-read" List</h2>
+
+  <!-- Check if the user has any books in their wish list -->
+  {% if user_books %}
+  <div class="row">
+    {% for entry in user_books %}
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <img
+          src="{{ entry.book.cover_image.url }}"
+          class="card-img-top"
+          alt="{{ entry.book.title }} Book Cover"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ entry.book.title }}</h5>
+          <p class="card-text">
+            <strong>Author:</strong> {{ entry.book.author }}
+          </p>
+          <p class="card-text">{{ entry.book.description|truncatewords:20 }}</p>
+          <a
+            href="{% url 'book_details_view' entry.book.slug %}"
+            class="btn btn-primary"
+            >View Details</a
+          >
+          <form
+            method="POST"
+            action="{% url 'remove_from_wish_list' entry.id %}"
+            class="mt-2"
+          >
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Remove</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p>You have no books in your wish list yet.</p>
+  <a href="{% url 'books_view' %}" class="btn btn-primary">Browse Books</a>
+  {% endif %}
+</div>
+{% endblock %}
