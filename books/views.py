@@ -13,7 +13,8 @@ from django.core.paginator import Paginator
 def books_view(request):
     books = Book.objects.all()  # Fetch all books from the database
     pagination = Paginator(books, 3)  # Set the number of books per page to 3
-    page_number = request.GET.('page')
+    # Get the page number from the request query parameters
+    page_number = request.GET.get('page', 1)
     page_books = Paginator.get_page(page_number)
 
     return render(request, 'books/book_list.html', {'page_books': page_books})
