@@ -7,6 +7,7 @@ from reviews.forms import ReviewForm
 from django.contrib.auth.decorators import login_required
 from django.views import generic
 from django.core.paginator import Paginator
+from django.contrib.auth.decorators import user_passes_test
 
 
 # View to display a list of all books with pagination
@@ -96,10 +97,17 @@ def delete_review(request, review_id):
     return redirect('book_details_view', slug=review.book.slug)
 
 
-# View to create a new book
+# Utility function to check if the user is a superuser
+def is_superuser(user):
+    return user.is_superuser
+
+
+# View to create a new book (only superusers)
+@user_passes_test(is_superuser, login_url='login')
 def create_book(request):
     if request.method == 'POST':
-        form = BookForm(request.POST)
+        # Include request.FILES for file uploads (e.g., book cover)
+        form = BookForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             messages.success(request, 'Book created successfully!')
@@ -109,11 +117,12 @@ def create_book(request):
     return render(request, 'books/create_book.html', {'form': form})
 
 
-# View to update an existing book
+# View to update an existing book (only superusers)
+@user_passes_test(is_superuser, login_url='login')
 def update_book(request, slug):
     book = get_object_or_404(Book, slug=slug)
     if request.method == 'POST':
-        form = BookForm(request.POST, instance=book)
+        form = BookForm(request.POST, request.FILES, instance=book)
         if form.is_valid():
             form.save()
             messages.success(request, 'Book updated successfully!')
@@ -123,11 +132,12 @@ def update_book(request, slug):
     return render(request, 'books/update_book.html', {'form': form})
 
 
-# View to delete a book
+# View to delete a book (only superusers)
+@user_passes_test(is_superuser, login_url='login')
 def delete_book(request, slug):
     book = get_object_or_404(Book, slug=slug)
     if request.method == 'POST':
-        book.delete()  # Delete the book from the database
+        book.delete()
         messages.success(request, 'Book deleted successfully!')
         return redirect('books_view')
     return render(request, 'books/delete_book.html', {'book': book})
