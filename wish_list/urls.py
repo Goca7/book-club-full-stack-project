@@ -3,8 +3,6 @@ from . import views  # Import views from the wish_list app
 from .views import CustomLoginView
 
 urlpatterns = [
-    # URL for displaying the wish list
-    path('', views.wish_list_view, name='wish_list_view'),
 
     # URL for the signup page
     path('signup/', views.signup_view, name='signup'),
@@ -18,5 +16,10 @@ urlpatterns = [
 
     # Custom login view pointing to wish_list/login.html
     path('login/', CustomLoginView.as_view(), name='login'),
+
+    # URL for displaying the wish list
+    path('', views.wish_list_view, name='wish_list_view'),
+
+
 
 ]
