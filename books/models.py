@@ -8,6 +8,8 @@ class Book(models.Model):
     genre = models.TextField()
     description = models.TextField()
     slug = models.SlugField(max_length=250, unique=True, blank=True)
+    cover_image = models.ImageField(
+        upload_to='book_covers/', blank=True, null=True)
 
     def save(self, *args, **kwargs):
         if not self.slug:

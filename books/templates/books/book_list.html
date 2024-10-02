@@ -41,10 +41,9 @@
 
   <!-- Pagination controls -->
   <div class="pagination justify-content-center mt-4">
-    <span class="page-link"
-      >Page {{ page_books.number }} of {{ page_books.paginator.num_pages
-      }}</span
-    >
+    <span class="page-link">
+      Page {{ page_books.number }} of {{ page_books.paginator.num_pages }}
+    </span>
     <div class="btn-group">
       {% if page_books.has_previous %}
       <a
