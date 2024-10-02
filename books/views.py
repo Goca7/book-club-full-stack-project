@@ -14,8 +14,8 @@ def books_view(request):
     books = Book.objects.all()  # Fetch all books from the database
     pagination = Paginator(books, 3)  # Set the number of books per page to 3
     page_number = request.GET.get('page')
-    page_books = Paginator.get_page(page_number
-                                    )
+    page_books = Paginator.get_page(page_number)
+
     return render(request, 'books/book_list.html', {'page_books': page_books})
 
 
