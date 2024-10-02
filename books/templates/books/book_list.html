@@ -36,3 +36,28 @@
     {% endfor %}
   </div>
 </div>
+
+<!-- Pagination -->
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        {% if page_books.has_previous %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ page_books.previous_page_number }}">Previous</a>
+        </li>
+        {% endif %}
+
+        {% for num in page_books.paginator.page_range %}
+        <li class="page-item {% if page_books.number == num %}active{% endif %}">
+            <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+        </li>
+        {% endfor %}
+
+        {% if page_books.has_next %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ page_books.next_page_number }}">Next</a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>
+</div>
+{% endblock %}
