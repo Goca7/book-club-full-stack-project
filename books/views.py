@@ -15,7 +15,8 @@ def books_view(request):
     pagination = Paginator(books, 3)  # Set the number of books per page to 3
     # Get the page number from the request query parameters
     page_number = request.GET.get('page', 1)
-    page_books = Paginator.get_page(page_number)
+    # Get the page of books for the current page
+    page_books = paginator.get_page(page_number)
 
     return render(request, 'books/book_list.html', {'page_books': page_books})
 
