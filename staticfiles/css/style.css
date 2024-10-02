@@ -200,3 +200,18 @@ a:hover {
 .py-5 {
   padding: 3rem 0;
 }
+
+/* Book List Grid Styling */
+.card {
+  border: none;
+  transition: box-shadow 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  height: 250px;
+  object-fit: cover;
+}
