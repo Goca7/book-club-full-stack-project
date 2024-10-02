@@ -7,24 +7,19 @@
     {% for book in page_books %}
     <div class="col-md-4 mb-4">
       <div class="card h-100">
+        {% if book.cover_image %}
         <img
-          {%
-          if
-          book.cover_image
-          %}
           src="{{ book.cover_image.url }}"
-          <!--
-          Use
-          uploaded
-          cover
-          image
-          if
-          available
-          --
+          class="card-img-top"
+          alt="Book cover"
         />
-        {% else %} src="{% static 'images/book-cover-placeholder.jpg' %}"
-        <!-- Fallback to placeholder if no image -->
-        {% endif %} class="card-img-top" alt="Book cover" />
+        {% else %}
+        <img
+          src="{% static 'images/book-cover-placeholder.jpg' %}"
+          class="card-img-top"
+          alt="Book cover"
+        />
+        {% endif %}
 
         <div class="card-body d-flex flex-column justify-content-between">
           <div>
