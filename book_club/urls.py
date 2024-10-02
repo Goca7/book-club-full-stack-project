@@ -20,7 +20,6 @@ from django.views.generic import TemplateView
 from django.conf import settings
 from django.conf.urls.static import static
 
-
 urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),  # Authentication URLs
     path('admin/', admin.site.urls),  # Admin URLs
@@ -28,5 +27,9 @@ urlpatterns = [
     path('wish-list/', include('wish_list.urls')),  # Wish List URLs
     path("", TemplateView.as_view(template_name="books/index.html"),
          name="home"),  # Home page URL
-
 ]
+
+# Serve media files during development
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
