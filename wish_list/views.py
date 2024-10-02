@@ -39,7 +39,7 @@ def wish_list_view(request):
         return redirect('login')
 
 
-# Remove a book from the "Want-to-read" list
+# Delete a book from the "Want-to-read" list
 def remove_from_wish_list(request, wish_list_id):
     if request.user.is_authenticated:
         # Fetch the specific WishList entry by its ID and ensure it belongs to the authenticated user
@@ -52,3 +52,17 @@ def remove_from_wish_list(request, wish_list_id):
     else:
         # Redirect to the login page if the user is not authenticated
         return redirect('login')
+
+
+# Signup view to allow new users to register
+def signup_view(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()  # Save the new user
+            # Redirect to the login page after successful signup
+            return redirect('login')
+    else:
+        form = UserCreationForm()
+    # Render the signup page with the form
+    return render(request, 'registration/signup.html', {'form': form})
