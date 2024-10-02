@@ -123,6 +123,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Authentication-related settings
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'wish_list_view'
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/

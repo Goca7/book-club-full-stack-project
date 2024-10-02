@@ -41,6 +41,7 @@ def add_to_wish_list(request, book_id):
 # Redirect to login if the user is not authenticated
 @login_required(login_url='login')
 def wish_list_view(request):
+    # Fetch the books in the user's "Want-to-read" list
     user_books = WishList.objects.filter(user=request.user)
     context = {
         'user_books': user_books
