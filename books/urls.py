@@ -1,3 +1,6 @@
+from django.urls import path  # Make sure this import is present
+from . import views
+
 urlpatterns = [
     path('create/', views.create_book, name='create_book'),  # Create a new book
     # Book listing page with pagination
