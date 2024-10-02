@@ -46,8 +46,8 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
       <div class="container-fluid">
         <!-- Logo -->
-        <a class="navbar-brand" href="{% url 'home' %}"
-          ><img
+        <a class="navbar-brand" href="{% url 'home' %}">
+          <img
             src="{% static 'images/logo.png' %}"
             alt="Page Turners Logo"
             class="img-fluid"
@@ -74,11 +74,19 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'books_view' %}">Book Listing</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'login' %}">Login</a>
-            </li>
 
-            <!-- Signup -->
+            <!-- Show "My Want-to-read" and "Logout" links if the user is logged in -->
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'wish_list_view' %}"
+                >My Want-to-read</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            </li>
+            {% else %}
+            <!-- Show "Signup" and "Login" links if the user is not logged in -->
             <li class="nav-item">
               <a
                 class="nav-link"
@@ -88,6 +96,10 @@
                 >Signup</a
               >
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+            {% endif %}
           </ul>
         </div>
       </div>
