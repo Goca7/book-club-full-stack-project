@@ -40,9 +40,11 @@ def edit_review(request, review_id):
     if request.method == 'POST':
         form = ReviewForm(request.POST, instance=review)
         if form.is_valid():
+            
             form.save()
             messages.success(request, 'Review updated successfully!')
         else:
+            print(form.errors)
             messages.error(
                 request, 'There was a problem updating your review.')
         return redirect('book_details_view', slug=review.book.slug)

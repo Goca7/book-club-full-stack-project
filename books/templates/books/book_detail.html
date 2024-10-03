@@ -1,4 +1,5 @@
 {% extends 'base.html' %} {% block content %}
+
 <div class="container mt-5">
   <div class="row">
     <div class="col-md-6">
@@ -50,14 +51,14 @@
       <ul class="list-unstyled">
         {% for review in reviews %}
         <li>
-          <strong>{{ review.user.username }}</strong> ({{
-          review.created_at|date:"F d, Y" }})<br />
+          <strong>{{ review.user.username }}</strong>
+          {{review.created_at|date:"Y-m-d" }}<br />
           {{ review.review_text }}
 
           <!-- Allow user to edit or delete their own review -->
           {% if review.user == user %}
           <div class="mt-2">
-            <form method="POST" action="{% url 'edit_review' review.id %}">
+            <form method="GET" action="{% url 'edit_review' review.id %}">
               {% csrf_token %}
               <input type="hidden" name="review_id" value="{{ review.id }}" />
               <button type="submit" class="btn btn-secondary btn-sm">
