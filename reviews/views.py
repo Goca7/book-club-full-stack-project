@@ -57,8 +57,9 @@ def edit_review(request, review_id):
 
     return render(request, 'reviews/edit_review.html', context)
 
-
 # Delete a review (only the review owner or a superuser can delete)
+
+
 @login_required(login_url='login')
 def delete_review(request, review_id):
     review = get_object_or_404(Review, id=review_id)

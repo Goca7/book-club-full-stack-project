@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container mt-5">
+  <h2>Edit Review for {{ review.book.title }}</h2>
+
+  <!-- Review form to edit -->
+  <form method="POST">
+    {% csrf_token %} {{ review_form.as_p }}
+    <button type="submit" class="btn btn-primary">Update Review</button>
+  </form>
+
+  <!-- Link to return to book details page -->
+  <a
+    href="{% url 'book_details_view' review.book.slug %}"
+    class="btn btn-secondary mt-3"
+    >Cancel</a
+  >
+</div>
+{% endblock %}
