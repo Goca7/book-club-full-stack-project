@@ -287,6 +287,11 @@ Validation tools used are [Nu HTML Checker](https://validator.w3.org/nu/), [Jigs
 <img width="679" alt="html_validation_demian" src="https://github.com/user-attachments/assets/bf6a5fff-d712-4fda-bc5d-47b9dfbd45ac">
 <img width="665" alt="html_validation_thebridge" src="https://github.com/user-attachments/assets/d242a3ae-700c-460a-a708-da484a4cc013">
 
+#### CSS Validation
+
+<img width="763" alt="css_validation" src="https://github.com/user-attachments/assets/307792fa-0fea-4c61-9071-d7ca33baebdb">
+
+
 ## SECRET_KEY
 
 - I created a new SECRET_KEY and set it as an environment variable in the env.py file. I modified the settings.py file to retrieve the new SECRET_KEY from the environment variables. To ensure the security of my Django app on Heroku, I set the SECRET_KEY as a config variable on Heroku as well.
