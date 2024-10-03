@@ -142,6 +142,10 @@ a:hover {
   border: none;
 }
 
+iframe{
+  border: none;
+}
+
 /* Footer */
 .footer {
   background-color: #f9f9f9;
