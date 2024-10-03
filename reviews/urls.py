@@ -1,5 +1,7 @@
-# from django.urls import path
-# from . import views  # Import views from the reviews app
+from django.urls import path
+from . import views
 
-# urlpatterns = [
-# path('', views.show_reviews, name='reviews_view'),]
+urlpatterns = [
+    path('add/<slug:slug>/', views.add_review, name='add_review'),
+    path('delete/<int:review_id>/', views.delete_review, name='delete_review'),
+]
