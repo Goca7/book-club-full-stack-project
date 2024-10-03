@@ -47,7 +47,6 @@ def add_to_wish_list_from_list(request, book_id):
 
 
 # View to display a single book using its slug, along with reviews and handle review form submissions
-@login_required(login_url='login')
 def book_details_view(request, slug):
     # Fetch the book from the database using its slug
     book = get_object_or_404(Book, slug=slug)
