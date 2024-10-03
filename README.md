@@ -125,7 +125,13 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
   5.  The related books must be relevant, showing books from the same genre or by the same author as the currently viewed book.
 
-### Accessibility (tba)
+### Accessibility 
+
+<img width="186" alt="WAVE_evaluation" src="https://github.com/user-attachments/assets/f38ba578-c679-4b23-a69a-69b314a0de2d">
+
+<img width="244" alt="lighthouse_test" src="https://github.com/user-attachments/assets/33c27441-8233-41c4-a8e6-962be1a7521e">
+
+- The Lighthouse and WAVE accessibility checks highlighted opportunities for improvements.
 
 ## Design
 
@@ -303,12 +309,16 @@ Validation tools used are [Nu HTML Checker](https://validator.w3.org/nu/), [Jigs
 <img width="566" alt="python_linter_reviews_views" src="https://github.com/user-attachments/assets/1c6db330-4db9-4bd9-b34c-9262f224d2d4">
 <img width="557" alt="python_linter_wishlist_views" src="https://github.com/user-attachments/assets/29a1732d-498d-41d6-a174-88e5c2a4403e">
 
-
+### Manual Testing (tba)
 
 ## SECRET_KEY
 
 - I created a new SECRET_KEY and set it as an environment variable in the env.py file. I modified the settings.py file to retrieve the new SECRET_KEY from the environment variables. To ensure the security of my Django app on Heroku, I set the SECRET_KEY as a config variable on Heroku as well.
 
-## Credits (tba)
+## Credits 
 
-Image by Pexels from Pixabay
+- Hero image by Pexels from Pixabay
+- Book cover images by Amazon UK
+- Animation by Video Effects on YouTube
+- Content by Claude 3 
+
