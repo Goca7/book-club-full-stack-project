@@ -275,8 +275,6 @@ Image by <a href="https://pixabay.com/users/pexels-2286921/?utm_source=link-attr
 ### Validation of HTML, CSS, JS, and Python Code
 Validation tools used are [Nu HTML Checker](https://validator.w3.org/nu/), [Jigsaw](https://jigsaw.w3.org/css-validator/), [JSHint](https://jshint.com/), [PEP8 codeInst](https://pep8ci.herokuapp.com/#), [autopep8 (locally, CLI)](https://pypi.org/project/autopep8/), and [Python Syntax Checker](https://extendsclass.com/python-tester.html).
 
-
-
 #### HTML Validation
 
 <img width="680" alt="html_validation_index" src="https://github.com/user-attachments/assets/b7d1eb07-9cf8-4273-a070-f8d105751fbe">
@@ -291,6 +289,9 @@ Validation tools used are [Nu HTML Checker](https://validator.w3.org/nu/), [Jigs
 
 <img width="763" alt="css_validation" src="https://github.com/user-attachments/assets/307792fa-0fea-4c61-9071-d7ca33baebdb">
 
+#### Javascript Validation
+
+<img width="548" alt="js_validation" src="https://github.com/user-attachments/assets/ac1948ad-0563-4df1-b3d9-8b2d7cc40f44">
 
 ## SECRET_KEY
 
