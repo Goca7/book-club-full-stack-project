@@ -276,11 +276,16 @@ Image by <a href="https://pixabay.com/users/pexels-2286921/?utm_source=link-attr
 Validation tools used are [Nu HTML Checker](https://validator.w3.org/nu/), [Jigsaw](https://jigsaw.w3.org/css-validator/), [JSHint](https://jshint.com/), [PEP8 codeInst](https://pep8ci.herokuapp.com/#), [autopep8 (locally, CLI)](https://pypi.org/project/autopep8/), and [Python Syntax Checker](https://extendsclass.com/python-tester.html).
 
 
+
 #### HTML Validation
 
-
-
-
+<img width="680" alt="html_validation_index" src="https://github.com/user-attachments/assets/b7d1eb07-9cf8-4273-a070-f8d105751fbe">
+<img width="685" alt="html_validation_booklisting" src="https://github.com/user-attachments/assets/64f33cec-542d-45fb-a81a-f27e76a7fde9">
+<img width="678" alt="html_validation_booklisting_page2" src="https://github.com/user-attachments/assets/8890f75e-c501-4b65-a8ad-0cca69ab6b44">
+<img width="677" alt="html_validation_theslave" src="https://github.com/user-attachments/assets/ec168b32-8c26-43d6-a220-77b46b77c2e3">
+<img width="678" alt="html_validation_brightonrock" src="https://github.com/user-attachments/assets/50d0634e-5737-445d-b1f3-a893bedfb255">
+<img width="679" alt="html_validation_demian" src="https://github.com/user-attachments/assets/bf6a5fff-d712-4fda-bc5d-47b9dfbd45ac">
+<img width="665" alt="html_validation_thebridge" src="https://github.com/user-attachments/assets/d242a3ae-700c-460a-a708-da484a4cc013">
 
 ## SECRET_KEY
 
