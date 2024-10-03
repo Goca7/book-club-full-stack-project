@@ -7,9 +7,12 @@
       <!-- Check for form errors and display them -->
       {% if form.errors %}
       <div class="alert alert-danger">
-        <strong
-          >There was an error with your login details. Please try again.</strong
-        >
+        <strong>There were some errors:</strong>
+        <ul>
+          {% for field in form %} {% for error in field.errors %}
+          <li>{{ error }}</li>
+          {% endfor %} {% endfor %}
+        </ul>
       </div>
       {% endif %}
 
