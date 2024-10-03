@@ -6,39 +6,56 @@ from .forms import ReviewForm
 from books.models import Book
 
 
-# View to handle adding and editing reviews
+# View to handle adding a new review
 @login_required(login_url='login')
 def add_review(request, slug):
     book = get_object_or_404(Book, slug=slug)
 
-    # Check if the user has already reviewed the book
-    existing_review = Review.objects.filter(
-        book=book, user=request.user).first()
-
     if request.method == 'POST':
-        # Handle editing an existing review
-        if existing_review:
-            form = ReviewForm(request.POST, instance=existing_review)
-            if form.is_valid():
-                form.save()
-                messages.success(request, 'Review updated successfully!')
-            else:
-                messages.error(
-                    request, 'There was a problem updating your review.')
-        # Handle adding a new review
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            new_review = form.save(commit=False)
+            new_review.book = book
+            new_review.user = request.user
+            new_review.save()
+            messages.success(request, 'Review added successfully!')
         else:
-            form = ReviewForm(request.POST)
-            if form.is_valid():
-                new_review = form.save(commit=False)
-                new_review.book = book
-                new_review.user = request.user
-                new_review.save()
-                messages.success(request, 'Review added successfully!')
-            else:
-                messages.error(
-                    request, 'There was a problem submitting your review.')
+            messages.error(
+                request, 'There was a problem submitting your review.')
         return redirect('book_details_view', slug=book.slug)
     return redirect('book_details_view', slug=book.slug)
+
+
+# View to handle editing an existing review
+@login_required(login_url='login')
+def edit_review(request, review_id):
+    review = get_object_or_404(Review, id=review_id)
+
+    # Ensure only the review owner can edit
+    if review.user != request.user:
+        messages.error(
+            request, 'You do not have permission to edit this review.')
+        return redirect('book_details_view', slug=review.book.slug)
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=review)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Review updated successfully!')
+        else:
+            messages.error(
+                request, 'There was a problem updating your review.')
+        return redirect('book_details_view', slug=review.book.slug)
+    else:
+        form = ReviewForm(instance=review)
+
+    context = {
+        'form': form,
+        'review': review,
+        'book': review.book,
+    }
+
+    return render(request, 'reviews/edit_review.html', context)
 
 
 # Delete a review (only the review owner or a superuser can delete)
