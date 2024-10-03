@@ -24,6 +24,7 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),  # Authentication URLs
     path('admin/', admin.site.urls),  # Admin URLs
     path('books/', include('books.urls')),  # Book-related URLs
+    path('reviews/', include('reviews.urls')),  # Reviews URLs
     path('wish-list/', include('wish_list.urls')),  # Wish List URLs
     path("", TemplateView.as_view(template_name="books/index.html"),
          name="home"),  # Home page URL
