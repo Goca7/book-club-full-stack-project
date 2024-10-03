@@ -126,6 +126,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Authentication-related settings
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'wish_list_view'
+LOGOUT_REDIRECT_URL = 'home'
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
