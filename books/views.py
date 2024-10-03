@@ -46,16 +46,31 @@ def add_to_wish_list_from_list(request, book_id):
         return redirect('books_view')
 
 
-# View to display a single book using its slug, along with reviews
+# View to display a single book using its slug, along with reviews and handle review form submissions
+@login_required(login_url='login')
 def book_details_view(request, slug):
     # Fetch the book from the database using its slug
     book = get_object_or_404(Book, slug=slug)
     # Fetch all reviews for the book
     reviews = Review.objects.filter(book=book)
 
+    # Handle review form submission
+    if request.method == 'POST':
+        review_form = ReviewForm(request.POST)
+        if review_form.is_valid():
+            new_review = review_form.save(commit=False)
+            new_review.book = book  # Associate the review with the book
+            new_review.user = request.user  # Associate the review with the logged-in user
+            new_review.save()
+            messages.success(request, 'Review added successfully!')
+            return redirect('book_details_view', slug=book.slug)
+    else:
+        review_form = ReviewForm()
+
     context = {
         'book': book,
         'reviews': reviews,
+        'review_form': review_form,
     }
     return render(request, 'books/book_detail.html', context)
 
