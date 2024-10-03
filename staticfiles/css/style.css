@@ -27,12 +27,14 @@ a:hover {
   border-bottom: 1px solid #ddd;
 }
 
-.navbar-nav .nav-link {
-  color: #0a0303;
+.navbar .navbar-nav .nav-link {
+  color: #0a0303 !important;
+  font-weight: bold !important;
 }
 
 .navbar-nav .nav-link:hover {
-  color: red; /* Hover effect for nav links */
+  color: red !important;
+  font-weight: bold !important; /* Hover effect for nav links */
 }
 
 /* Hero Section */
