@@ -270,7 +270,17 @@ Image by <a href="https://pixabay.com/users/pexels-2286921/?utm_source=link-attr
 
 ## Deployment and Local Development (tba)
 
-## Testing (tba)
+## Testing
+
+### Validation of HTML, CSS, JS, and Python Code
+Validation tools used are [Nu HTML Checker](https://validator.w3.org/nu/), [Jigsaw](https://jigsaw.w3.org/css-validator/), [JSHint](https://jshint.com/), [PEP8 codeInst](https://pep8ci.herokuapp.com/#), [autopep8 (locally, CLI)](https://pypi.org/project/autopep8/), and [Python Syntax Checker](https://extendsclass.com/python-tester.html).
+
+
+#### HTML Validation
+
+
+
+
 
 ## SECRET_KEY
 
