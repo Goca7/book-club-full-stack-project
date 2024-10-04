@@ -277,13 +277,36 @@ The book cover images used on this website are sourced from Amazon.co.uk. This s
 
 ![book_club_ER_diagram](https://github.com/user-attachments/assets/ede5057d-209f-4436-b888-4c46f9eabb73)
 
-## Technologies Used (tba)
+## Technologies Used 
 
+- HTML5
+- CSS3
+- Javascript
+- Python3
+- Django4
+- Bootstrap5
+- Markdown Builder
+- Git
+- GitHub
+- PostgreSQL
+- Heroku
+- WhiteNoise
+- Gunicorn
+- Psycopg2
+- Allauth
+- Favicon Generator
+- Logo Generator
+- Google Fonts
 - Visily
 - Lucidchart
 - Figma
 - MS Word
 - TinyPNG
+- ChatGPT (used for debugging and troubleshooting)
+- W3C HTML Markup Validator
+- W3C Jigsaw CSS Validator
+- JS Hint
+- CI Python Linter
 
 ## Agile Methodology (tba)
 
