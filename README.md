@@ -300,7 +300,13 @@ The book cover images used on this website are sourced from Amazon.co.uk. This s
 - WAVE
 - CI Python Linter
 
-## Agile Methodology (tba)
+## Agile Methodology 
+
+<img width="686" alt="agile_methodology" src="https://github.com/user-attachments/assets/cb4fb8c5-034f-4b2b-aad0-9edc8fd043d4">
+
+Agile methodology was implemented throughout the development of this project, providing an iterative and flexible approach to software development.
+
+The process was structured using GitHub’s Project Board, which employed a Kanban-style system to manage the user stories and their progress.
 
 ## Deployment and Local Development (tba)
 
