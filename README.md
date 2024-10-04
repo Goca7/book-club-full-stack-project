@@ -218,15 +218,9 @@ The book cover images used on this website are sourced from Amazon.co.uk. This s
 
 ### Future Features
 
-#### Home Page (tba)
-
-#### Book Listing Page (tba)
-
 ### Book Detail Page
 
 - Related Books: At the bottom of the page, suggest similar or related books based on the genre or author.
-
-#### User Profile Page (tba)
 
 ### User Flow Diagrams
 
@@ -348,6 +342,10 @@ Validation tools used are [Nu HTML Checker](https://validator.w3.org/nu/), [Jigs
 ![Manual_Testing_Results-1](https://github.com/user-attachments/assets/3cee3ace-f611-4051-bb45-2214aaa13cb7)
 
 ![Manual_Testing_Results-2](https://github.com/user-attachments/assets/724c2aff-b00b-401b-8b05-1c2f45197fb7)
+
+### Responsive Design
+
+<img width="627" alt="responsivness_test" src="https://github.com/user-attachments/assets/6eaee6fb-df74-440f-b6de-edadddae818a">
 
 ## SECRET_KEY
 
