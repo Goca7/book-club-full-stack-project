@@ -174,7 +174,7 @@ The book cover images used on this website are sourced from Amazon.co.uk. This s
 
 ![Book_detail_page_wireframes](https://github.com/user-attachments/assets/a0b7c7e8-278d-4f70-81cc-feefb7e19919)
 
-#### User Profile Page
+####  Want-to-read-list Page
 
 ![User_profile_page_wireframes](https://github.com/user-attachments/assets/940159d9-e0f6-406c-9fff-280a57c9eccc)
 
