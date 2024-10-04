@@ -296,6 +296,7 @@ The book cover images used on this website are sourced from Amazon.co.uk. This s
 - Allauth
 - Favicon Generator
 - Logo Generator
+- Coolors
 - Google Fonts
 - Visily
 - Lucidchart
@@ -306,6 +307,8 @@ The book cover images used on this website are sourced from Amazon.co.uk. This s
 - W3C HTML Markup Validator
 - W3C Jigsaw CSS Validator
 - JS Hint
+- Lighthouse
+- WAVE
 - CI Python Linter
 
 ## Agile Methodology (tba)
