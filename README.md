@@ -2,7 +2,13 @@
 
 Page Turners aims to provide an engaging and user-friendly platform for adult readers to discover and review books. The platform is designed for book enthusiasts who want to explore book details, save their favorite titles for future reading, and contribute to the community by leaving reviews. The target audience primarily consists of adult readers seeking to connect with like-minded individuals through book reviews. The site also provides functionality for admins to manage content efficiently, including the ability to moderate reviews and maintain the book database.
 
-[Live project] (https://
+[Live project](https://book-club-acf9649c2594.herokuapp.com/)
+
+(https://book-club-acf9649c2594.herokuapp.com/admin/)
+Admin Username: goca7
+Password: Book_club
+
+[Project Board]
 
 ## Contents (tba)
 
@@ -22,23 +28,27 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
 #### User Story: View Book Details 
 
-- As a visitor, I want to sign up easily, so that I can join the Book Club.
+- As a member, I want to view book details, so that I can learn more about specific titles before deciding to read them.
 
 - Acceptance Criteria:
 
-  1. Visitors should be able to click on a book title to view its details (title, author, genre, description).
+  1. Visitors should be able to click on a button to read more about the book.
 
-  2. The book detail page must include user reviews and ratings.
+  2. The book detail page must include user reviews.
 
   3. Non-members must have access to view book details without logging in.
 
 #### User Story: Secure Login 
 
-- As a member, I want to view book details, so that I can learn more about specific titles before deciding to read them.
+-As a member, I want to log in securely, so I can access my wish list and leave reviews.
 
 - Acceptance Criteria:
 
-  1. The data entered by the user into the login form (username and password) is correct and in the proper format before it is submitted to the server for processing.
+  1. The login form must validate that the data entered by the user (username and password) is in the correct format before being submitted to the server.
+ 
+  2. If the login credentials are correct, the user should be authenticated and redirected to their Want-to-read list.
+ 
+  3. If the login credentials are incorrect, an error message should be displayed, prompting the user to try again.
 
 #### User Story: Leave Review 
 
@@ -48,7 +58,7 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
   1. Users must be logged in to submit a review.
 
-  2. Reviews should be displayed with the user's name, rating (1–5 stars), and review text.
+  2. Reviews should be displayed with the user's name, submission date and review text.
 
   3. Users must have the option to edit or delete their reviews.
 
@@ -58,7 +68,7 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
 - Acceptance Criteria:
 
-  1. Users should have an "Want-to-read" button on each book detail page.
+  1. Users should have an "Want-to-read" button on book listing page and each book detail page.
 
   2. The system must store the list under the user's profile and be accessible at any time.
 
@@ -72,30 +82,16 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
   1. The system should send a notification when a user submits a book review.
 
-#### User Story: Account Deletion 
-
-- As a member, I want to delete my account easily, so that I can remove my personal data and stop using the platform.
-
-- Acceptance Criteria:
-
-  1. The user can navigate to the profile page and find a "Delete Account" button.
-
-  2. Upon clicking the button, a confirmation prompt appears, asking the user to confirm the deletion.
-
-  3. The system permanently deletes the user’s account and associated data (e.g., reviews, "Want-to-read" list) upon confirmation.
-
-  4. The user receives a confirmation message notifying them that their account has been deleted.
-
-  5. After deletion, the user can no longer log in with the deleted account credentials.
 
 #### User Story: Review Moderation 
 
 - As an admin, I want to view and moderate members' reviews, so that I can ensure they are appropriate.
+  
 - Acceptance Criteria:
 
-  1. Admins should be able to access a dashboard to see all user reviews and comments.
+  1. Admins should be able to access a dashboard to see all user reviews.
 
-  2. Admins must have the ability to delete inappropriate content.
+  2. Admins must have the facility to delete inappropriate content.
 
 #### User Story: Manage Database 
 
@@ -107,7 +103,7 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
   2. Admins must be able to edit book information like title, author, genre, and description.
 
-  3. Admins must have the ability to delete books and their associated data.
+  3. Admins must have the facility to delete books and their associated data.
 
 #### User Story: Related Books 
 
@@ -117,13 +113,10 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
   1.  When a user views the book detail page, related books (based on genre or author) should be displayed at the bottom of the page.
 
-  2.  The system should display at least three related books in a horizontal scroll or grid format.
+  2.  Each related book should include the title, author, and a link to its detail page.
 
-  3.  Each related book should include the title, author, and a link to its detail page.
+  3.  If there are no related books available, this section should be hidden or display a message like “No related books found.”
 
-  4.  If there are no related books available, this section should be hidden or display a message like “No related books found.”
-
-  5.  The related books must be relevant, showing books from the same genre or by the same author as the currently viewed book.
 
 ### Accessibility 
 
