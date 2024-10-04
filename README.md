@@ -181,11 +181,19 @@ The book cover images used on this website are sourced from Amazon.co.uk. This s
 
 - Featured Books: A carousel or grid showcasing a selection of popular or recently added books to engage visitors.
 
+<img width="944" alt="feature_hero_navigationbar" src="https://github.com/user-attachments/assets/c978dae0-1e5f-4a48-940b-b15842b27aa0">
+
 - About Section: A brief introduction to the purpose of the book club, its mission, and its target audience (adults).
+  
+<img width="702" alt="feature_aboutus" src="https://github.com/user-attachments/assets/5404c470-e1a3-4ffe-b002-23d5bef041ff">
 
 - Login/Signup Form: Forms for logging in or signing up, with proper form validation for secure user authentication.
+  
+<img width="439" alt="feature_loginform" src="https://github.com/user-attachments/assets/67ae56c9-0fc2-4259-b032-2776a65a99cb">
 
 - Footer: Contains links to  social media profiles.
+  
+<img width="431" alt="feature_footer" src="https://github.com/user-attachments/assets/66906bf6-78e9-47d8-9c36-de6e56c7afd4">
 
 #### Book Listing Page
 
@@ -194,6 +202,8 @@ The book cover images used on this website are sourced from Amazon.co.uk. This s
 - Pagination: Ensure that the book listings are paginated, making it easy to navigate through large numbers of books without overwhelming the user.
 
 - "Want-to-read" Button: Logged-in members can directly add a book to their "Want-to-read" list from the listing page.
+
+  <img width="813" alt="feature_booklisting" src="https://github.com/user-attachments/assets/d496b723-8299-4f77-a109-dea13967608d">
 
 #### Book Detail Page
 
@@ -204,6 +214,8 @@ The book cover images used on this website are sourced from Amazon.co.uk. This s
 - Reviews Section: Shows reviews from other members, including the reviewer's name and date added. Logged-in users can leave their own review.
 
 - Navigation Links: Quick links back to the book listings page or Home page
+  
+<img width="748" alt="feature_bookdetails" src="https://github.com/user-attachments/assets/a49080da-1d7a-47c7-867f-32d445f5bda7">
 
 #### Want-to-read-list Page
 
@@ -211,6 +223,12 @@ The book cover images used on this website are sourced from Amazon.co.uk. This s
   page will display all the books that the user has previously added. 
 
 - Each entry in the list will have buttons to either remove the book from the list or navigate to the book detail page for more information.
+  
+<img width="450" alt="feature_listofaddedbooks_andbuttons" src="https://github.com/user-attachments/assets/f7cff53b-3e7e-4cd4-b6e6-65964d5c93d1">
+
+- Users will receive a confirmation message confirming the successful book deletion.
+  
+<img width="336" alt="feature_removedmessage" src="https://github.com/user-attachments/assets/42f7246e-0a4b-4bac-829b-9ae3df98ba7c">
 
 ### Future Features
 
@@ -398,7 +416,7 @@ If you have your own packages that have been installed, then the requirements fi
 The **Procfile** can be created with the following command:
 
 - `echo web: gunicorn app_name.wsgi > Procfile`
-- *replace **app_name** with the name of your primary Django app name; the folder where settings.py is located*
+- replace **app_name** with the name of your primary Django app name; the folder where settings.py is located
 
 The **runtime.txt** file needs to know which Python version you're using:
 1. type: `python3 --version` in the terminal.
@@ -452,7 +470,7 @@ Once the project is cloned or forked, in order to run it locally, you'll need to
 - Migrate the data to the database: `python3 manage.py migrate`
 - Create a superuser: `python3 manage.py createsuperuser`
 - Load fixtures (if applicable): `python3 manage.py loaddata file-name.json` (repeat for each file)
-- Everything should be ready now, so run the Django app again: `python3 manage.py runserver`
+- Run the Django app again: `python3 manage.py runserver`
 
 ## Testing
 
