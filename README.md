@@ -345,7 +345,9 @@ Validation tools used are [Nu HTML Checker](https://validator.w3.org/nu/), [Jigs
 
 ### Manual Testing 
 
+![Manual_Testing_Results-1](https://github.com/user-attachments/assets/3cee3ace-f611-4051-bb45-2214aaa13cb7)
 
+![Manual_Testing_Results-2](https://github.com/user-attachments/assets/724c2aff-b00b-401b-8b05-1c2f45197fb7)
 
 ## SECRET_KEY
 
