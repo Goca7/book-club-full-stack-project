@@ -203,7 +203,7 @@ The book cover images used on this website are sourced from Amazon.co.uk. This s
 
 - "Want-to-read" Button: Allows logged-in users to add the book to their "Want-to-read" list with a single click.
 
-- Reviews Section: Shows reviews from other members, including the reviewer's name, rating, and comment. Logged-in users can leave their own review.
+- Reviews Section: Shows reviews from other members, including the reviewer's name and date added. Logged-in users can leave their own review.
 
 - Navigation Links: Quick links back to the book listings page or Home page
 
@@ -240,6 +240,12 @@ The book cover images used on this website are sourced from Amazon.co.uk. This s
 
 - The Review model will store reviews users leave for each book. It is linked both to the Book and the User models.
 
+### WishList Model:
+
+- The WishList Model will store information about the books that users have added to their "Want-to-read"list. It is linked both to the Book and the User models.
+
+- The added_at field will automatically record the timestamp when a book is added to the list. 
+
 ### User Model:
 
 - The User model is provided by Django.
@@ -258,9 +264,21 @@ The book cover images used on this website are sourced from Amazon.co.uk. This s
 
 - Foreign Key: book_id in the Review table references the id in the Book table.
 
-![book_club_tables_in_database1](https://github.com/user-attachments/assets/5a7e87a1-a211-40be-adb0-a4ec6bc57e07)
+ #### User <-> WishList:
 
-![book_club_tables_in_database2](https://github.com/user-attachments/assets/376a960a-3afd-49fd-87c4-b254507e65d3)
+- One-to-many relationship: One user can have many wish list entries.
+
+- Foreign Key: user_id in the User table references the id in the WishList table.
+
+#### Book <-> WishList:
+
+- One-to-many relationship: Each book can appear in the "Want-to-read" list of multiple users.
+
+- Foreign Key: book_id in the Book table references the id in the WishList table.
+
+![book_club_tables_in_database-1](https://github.com/user-attachments/assets/bcfe301d-1763-4092-b91e-f3c7955e4443)
+
+![book_club_tables_in_database-2](https://github.com/user-attachments/assets/24b7a180-aded-4707-8130-0c9de6781743)
 
 ### ER Diagram
 
@@ -292,6 +310,7 @@ The book cover images used on this website are sourced from Amazon.co.uk. This s
 - Figma
 - MS Word
 - TinyPNG
+- JPG2PNG
 - ChatGPT (used for debugging and troubleshooting)
 - W3C HTML Markup Validator
 - W3C Jigsaw CSS Validator
