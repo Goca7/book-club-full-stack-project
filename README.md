@@ -374,6 +374,10 @@ The Page Turners website is fully responsive, adapting seamlessly to devices of 
 
 The layout adjusts to ensure that all elements—such as the navigation bar, hero section, featured books, and call-to-action buttons—are presented in an optimal format for each screen size. This guarantees a consistent and user-friendly experience, regardless of the device used.
 
+### Cross-Browser Compatibility Testing
+
+The website was tested across multiple web browsers, including Chrome, Edge, and Firefox, to ensure cross-browser compatibility. All features, including navigation, user interactions, and responsiveness, performed as expected, with no display or functionality issues observed. This confirms that the website delivers a consistent user experience across these major browsers.
+
 ## Note on SECRET_KEY
 
 - I created a new SECRET_KEY and set it as an environment variable in the env.py file. I modified the settings.py file to retrieve the new SECRET_KEY from the environment variables. To ensure the security of my Django app on Heroku, I set the SECRET_KEY as a config variable on Heroku as well.
