@@ -10,7 +10,7 @@ Admin Username: goca7
 
 Password: Book_club
 
-[Project Board]
+[Project Board](https://github.com/users/Goca7/projects/4)
 
 ## Contents (tba)
 
@@ -42,7 +42,7 @@ Password: Book_club
 
 #### User Story: Secure Login 
 
--As a member, I want to log in securely, so I can access my wish list and leave reviews.
+- As a member, I want to log in securely, so I can access my wish list and leave reviews.
 
 - Acceptance Criteria:
 
@@ -343,7 +343,9 @@ Validation tools used are [Nu HTML Checker](https://validator.w3.org/nu/), [Jigs
 <img width="566" alt="python_linter_reviews_views" src="https://github.com/user-attachments/assets/1c6db330-4db9-4bd9-b34c-9262f224d2d4">
 <img width="557" alt="python_linter_wishlist_views" src="https://github.com/user-attachments/assets/29a1732d-498d-41d6-a174-88e5c2a4403e">
 
-### Manual Testing (tba)
+### Manual Testing 
+
+
 
 ## SECRET_KEY
 
