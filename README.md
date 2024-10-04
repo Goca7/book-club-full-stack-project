@@ -347,6 +347,10 @@ Validation tools used are [Nu HTML Checker](https://validator.w3.org/nu/), [Jigs
 
 <img width="627" alt="responsivness_test" src="https://github.com/user-attachments/assets/6eaee6fb-df74-440f-b6de-edadddae818a">
 
+The Page Turners website is fully responsive, adapting seamlessly to devices of various screen sizes, including desktops, laptops, tablets, and mobile phones.
+
+The layout adjusts to ensure that all elements—such as the navigation bar, hero section, featured books, and call-to-action buttons—are presented in an optimal format for each screen size. This guarantees a consistent and user-friendly experience, regardless of the device used.
+
 ## SECRET_KEY
 
 - I created a new SECRET_KEY and set it as an environment variable in the env.py file. I modified the settings.py file to retrieve the new SECRET_KEY from the environment variables. To ensure the security of my Django app on Heroku, I set the SECRET_KEY as a config variable on Heroku as well.
