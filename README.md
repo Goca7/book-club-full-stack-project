@@ -12,8 +12,6 @@ Password: Book_club
 
 [Project Board](https://github.com/users/Goca7/projects/4)
 
-## Contents (tba)
-
 ## User Experience (UX)
 
 ### User Stories
@@ -364,9 +362,9 @@ Validation tools used are [Nu HTML Checker](https://validator.w3.org/nu/), [Jigs
 
 ### Manual Testing 
 
-![Manual_Testing_Results-1](https://github.com/user-attachments/assets/3cee3ace-f611-4051-bb45-2214aaa13cb7)
-
-![Manual_Testing_Results-2](https://github.com/user-attachments/assets/724c2aff-b00b-401b-8b05-1c2f45197fb7)
+![Manual_Testing_Results-1](https://github.com/user-attachments/assets/d3bfdc7d-6731-4559-8068-fce08e507695)
+![Manual_Testing_Results-3](https://github.com/user-attachments/assets/4f5b9d22-936b-41dd-bbee-2d8aca26f03c)
+![Manual_Testing_Results-2](https://github.com/user-attachments/assets/eb04f69e-a888-4332-832c-26563c5bedd7)
 
 ### Responsive Design
 
