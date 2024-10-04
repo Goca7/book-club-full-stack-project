@@ -135,7 +135,17 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
 ## Design
 
-### Colour Scheme (tba)
+### Colour Scheme 
+
+I chose colours that give the website a modern, minimalist look suitable for a reading-oriented platform.
+
+- Background: Primarily white (#ffffff) for clean readability.
+- Text Color: Dark shades like dark gray (#222222) for headings and regular text.
+- Accent Color: Red (#ff0000) is used for call-to-action buttons (e.g., "Join Now") and hover effects.
+- Navbar Links: Black or dark gray, transitioning to red on hover.
+- Additional Backgrounds: Light gray (#f9f9f9) is used in specific sections like featured books for contrast.
+  
+![Colour Palette](https://github.com/user-attachments/assets/8d86ea5e-fa60-4c17-8d41-1c44c68592a4)
 
 ### Typography (tba)
 
@@ -335,7 +345,7 @@ For Heroku deployment, follow these steps to connect your own GitHub repository 
 
 Either:
 
-- Select **Automatic Deployment** from the Heroku app.
+- Click on **Deploy Branch** in the Heroku app.
 
 Or:
 
