@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView
+from django.contrib import messages
 from .models import WishList
 from books.models import Book
 
