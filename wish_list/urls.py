@@ -7,7 +7,7 @@ urlpatterns = [
 
     # Custom login view pointing to wish_list/login.html
     path('login/', LoginView.as_view(template_name='wish_list/login.html'), name='login'),
-    # path('login/', CustomLoginView.as_view(), name='login'),
+    
 
     # URL for the signup page
     path('signup/', views.signup_view, name='signup'),
