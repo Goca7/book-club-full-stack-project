@@ -54,11 +54,16 @@ def wish_list_view(request):
 # Redirect to login if the user is not authenticated
 @login_required(login_url='login')
 def remove_from_wish_list(request, wish_list_id):
+    # Get the WishList entry for the user
     wish_list_entry = get_object_or_404(
-        WishList, id=wish_list_id, user=request.user)
+        WishList, id=wish_list_id, user=request.user
+    )
     # Delete the WishList entry (remove the book from the user's "Want-to-read" list)
     wish_list_entry.delete()
+
+    # Show a success message after deletion
     messages.success(request, 'Book removed from your Want-to-read list.')
+
     # Redirect the user back to their Wish List page after successfully removing the book
     return redirect('wish_list_view')
 
