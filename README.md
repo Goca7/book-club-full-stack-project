@@ -183,13 +183,13 @@ The book cover images used on this website are sourced from Amazon.co.uk. This s
 
 - About Section: A brief introduction to the purpose of the book club, its mission, and its target audience (adults).
 
-- Login/Signup Modals: Pop-up forms for logging in or signing up, with proper form validation for secure user authentication.
+- Login/Signup Form: Forms for logging in or signing up, with proper form validation for secure user authentication.
 
-- Footer: Contains links to privacy policy, contact information, and social media profiles.
+- Footer: Contains links to  social media profiles.
 
 #### Book Listing Page
 
-- Book Grid: Display books in a clean, responsive grid format, with each book showing its title, author, rating, and a brief summary. Each book is clickable, leading to the detailed book page.
+- Book Grid: Display books in a clean, responsive grid format, with each book showing its title, author, and a brief summary. Each book is clickable, leading to the detailed book page.
 
 - Pagination: Ensure that the book listings are paginated, making it easy to navigate through large numbers of books without overwhelming the user.
 
@@ -197,7 +197,7 @@ The book cover images used on this website are sourced from Amazon.co.uk. This s
 
 #### Book Detail Page
 
-- Book Information: Displays comprehensive details about the selected book, including the title, author, genre, publication date, synopsis, and rating.
+- Book Information: Displays details about the selected book, including the title, author, genre, synopsis, and reviews.
 
 - "Want-to-read" Button: Allows logged-in users to add the book to their "Want-to-read" list with a single click.
 
@@ -211,8 +211,6 @@ The book cover images used on this website are sourced from Amazon.co.uk. This s
   page will display all the books that the user has previously added. 
 
 - Each entry in the list will have buttons to either remove the book from the list or navigate to the book detail page for more information.
-
-- Users will receive a confirmation message confirming the successful book deletion.
 
 ### Future Features
 
@@ -327,7 +325,134 @@ Agile methodology was implemented throughout the development of this project, pr
 
 The process was structured using GitHub’s Project Board, which employed a Kanban-style system to manage the user stories and their progress.
 
-## Deployment and Local Development (tba)
+## Deployment
+
+The live deployed application can be found deployed on :
+
+[Heroku](https://lens-whisperer-1fde92b99730.herokuapp.com).
+
+### PostgreSQL Database
+
+This project uses a [Code Institute PostgreSQL Database](https://dbs.ci-dbs.net).
+
+To obtain my own Postgres Database from Code Institute, I followed these steps:
+
+- Signed-in to the CI LMS using my email address.
+- An email was sent to me with my new Postgres Database.
+
+> [!CAUTION]  
+> - PostgreSQL databases by Code Institute are only available to CI Students.
+> - You must acquire your own PostgreSQL database through some other method
+> if you plan to clone/fork this repository.
+> - Code Institute students are allowed a maximum of 8 databases.
+> - Databases are subject to deletion after 18 months.
+
+
+### Cloudinary API
+
+This project uses the [Cloudinary API](https://cloudinary.com) to store media assets online, due to the fact that Heroku doesn't persist this type of data.
+
+To obtain your own Cloudinary API key, create an account and log in.
+
+- For *Primary interest*, you can choose *Programmable Media for image and video API*.
+- Optional: *edit your assigned cloud name to something more memorable*.
+- On your Cloudinary Dashboard, you can copy your **API Environment Variable**.
+- Be sure to remove the `CLOUDINARY_URL=` as part of the API **value**; this is the **key**.
+
+### Heroku Deployment
+
+This project uses [Heroku](https://www.heroku.com), a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
+
+Deployment steps are as follows, after account setup:
+
+- Select **New** in the top-right corner of your Heroku Dashboard, and select **Create new app** from the dropdown menu.
+- Your app name must be unique, and then choose a region closest to you (EU or USA), and finally, select **Create App**.
+- From the new app **Settings**, click **Reveal Config Vars**, and set your environment variables.
+
+> [!IMPORTANT]  
+> This is a sample only; you would replace the values with your own if cloning/forking my repository.
+
+| Key | Value |
+| --- | --- |
+| `CLOUDINARY_NAME` | user's own value |
+| `CLOUDINARY_API` | user's own value |
+| `CLOUDINARY_SECRET` | user's own value |
+| `DB_URL` | user's own value |
+| `DISABLE_COLLECTSTATIC` | 1 (*this is temporary, and can be removed for the final deployment*) |
+| `SECRET_KEY` | user's own value |
+
+Heroku needs three additional files in order to deploy properly.
+
+- requirements.txt
+- Procfile
+- runtime.txt
+
+You can install this project's **requirements** (where applicable) using:
+
+- `pip3 install -r requirements.txt`
+
+If you have your own packages that have been installed, then the requirements file needs updated using:
+
+- `pip3 freeze --local > requirements.txt`
+
+The **Procfile** can be created with the following command:
+
+- `echo web: gunicorn app_name.wsgi > Procfile`
+- *replace **app_name** with the name of your primary Django app name; the folder where settings.py is located*
+
+The **runtime.txt** file needs to know which Python version you're using:
+1. type: `python3 --version` in the terminal.
+2. in the **runtime.txt** file, add your Python version:
+	- `python-3.9.18`
+
+For Heroku deployment, follow these steps to connect your own GitHub repository to the newly created app:
+
+Either:
+
+- Click on Deploy Branch on the Heroku app.
+
+Or:
+
+- In the Terminal/CLI, connect to Heroku using this command: `heroku login -i`
+- Set the remote for Heroku: `heroku git:remote -a app_name` (replace *app_name* with your app name)
+- After performing the standard Git `add`, `commit`, and `push` to GitHub, you can now type:
+	- `git push heroku main`
+
+### Local Deployment
+
+This project can be cloned or forked in order to make a local copy on your own system.
+
+For either method, you will need to install any applicable packages found within the *requirements.txt* file.
+
+- `pip3 install -r requirements.txt`.
+
+You will need to create a new file called `env.py` at the root-level,
+and include the same environment variables listed above from the Heroku deployment steps.
+
+Sample `env.py` file:
+
+```python
+import os
+
+os.environ.setdefault("CLOUDINARY_NAME", "user's own value")
+os.environ.setdefault("CLOUDINARY_API", "user's own value")
+os.environ.setdefault("CLOUDINARY_SECRET", "user's own value")
+os.environ.setdefault("DB_URL", "user's own value")
+os.environ.setdefault("SECRET_KEY", "user's own value")
+
+# local environment only (do not include these in production/deployment!)
+os.environ.setdefault("DEBUG", "True")
+```
+
+Once the project is cloned or forked, in order to run it locally, you'll need to follow these steps:
+
+- Start the Django app: `python3 manage.py runserver`
+- Stop the app once it's loaded: `CTRL+C` or `⌘+C` (Mac)
+- Make any necessary migrations: `python3 manage.py makemigrations`
+- Migrate the data to the database: `python3 manage.py migrate`
+- Create a superuser: `python3 manage.py createsuperuser`
+- Load fixtures (if applicable): `python3 manage.py loaddata file-name.json` (repeat for each file)
+- Everything should be ready now, so run the Django app again: `python3 manage.py runserver`
 
 ## Testing
 
