@@ -4,8 +4,10 @@ Page Turners aims to provide an engaging and user-friendly platform for adult re
 
 [Live project](https://book-club-acf9649c2594.herokuapp.com/)
 
-(https://book-club-acf9649c2594.herokuapp.com/admin/)
+[Django administration](https://book-club-acf9649c2594.herokuapp.com/admin/)
+
 Admin Username: goca7
+
 Password: Book_club
 
 [Project Board]
