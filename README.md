@@ -282,7 +282,7 @@ The book cover images used on this website are sourced from Amazon.co.uk. This s
 
 ### ER Diagram
 
-![book_club_ER_diagram](https://github.com/user-attachments/assets/ede5057d-209f-4436-b888-4c46f9eabb73)
+![book_club_ER_diagram](https://github.com/user-attachments/assets/d6924f6d-0eb5-4d90-9295-de0a7a291b1e)
 
 ## Technologies Used 
 
@@ -302,7 +302,7 @@ The book cover images used on this website are sourced from Amazon.co.uk. This s
 - Psycopg2
 - Allauth
 - Favicon Generator
-- Logo Generator
+- Logo 
 - Coolors
 - Google Fonts
 - Visily
